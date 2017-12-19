@@ -16,6 +16,7 @@
                 </action>
             </actions>
         </event-block>
+        <comment>Smart way to handle animations from stemkoski: &#x0D;&#x0A;https://www.scirra.com/tutorials/1117/animation-management-in-8-direction-games</comment>
         <event-block sid="216423433043373">
             <conditions>
                 <condition id="-1" name="Every tick" sid="612996119058317" type="System" />
@@ -48,6 +49,19 @@
             <actions>
                 <action id="5" name="Set frame" sid="576547496491935" type="spr_player">
                     <param id="0" name="Frame number">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="472801814043288">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="296658104933931" type="obj_player">
+                    <param id="0" name="Instance variable">has_light</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="437488479271021" type="spr_player_light">
+                    <param id="0" name="Object">obj_player</param>
+                    <param id="1" name="Image point (optional)">0</param>
                 </action>
             </actions>
         </event-block>

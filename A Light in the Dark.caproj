@@ -11,9 +11,11 @@
     <saved-with-version>25000</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -42,48 +44,67 @@
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder>
-        <object-type name="obj_player" sid="467835110333252">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="8Direction" sid="822028737545692">
-                    <behavior id="EightDir" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="739632854001814" speed="5">
-                    <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="spr_player" sid="240127954000570">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="4" loop="1" name="walk_0" pingpong="0" repeatcount="1" repeatto="0" sid="433068127723164" speed="10">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_0_0.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_0_1.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_0_2.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_0_3.png" />
-                </animation>
-                <animation framecount="4" loop="1" name="walk_1" pingpong="0" repeatcount="1" repeatto="0" sid="229629307824197" speed="10">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_1_0.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_1_1.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_1_2.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_1_3.png" />
-                </animation>
-                <animation framecount="4" loop="1" name="walk_2" pingpong="0" repeatcount="1" repeatto="0" sid="300672415924836" speed="10">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_2_0.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_2_1.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_2_2.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_2_3.png" />
-                </animation>
-                <animation framecount="4" loop="1" name="walk_3" pingpong="0" repeatcount="1" repeatto="0" sid="387057980132317" speed="10">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_3_0.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_3_1.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_3_2.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_3_3.png" />
-                </animation>
-            </animation-folder>
-        </object-type>
+        <object-folder name="Player">
+            <object-type name="obj_player" sid="467835110333252">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="8Direction" sid="822028737545692">
+                        <behavior id="EightDir" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="739632854001814" speed="5">
+                        <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="spr_player" sid="240127954000570">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="4" loop="1" name="walk_0" pingpong="0" repeatcount="1" repeatto="0" sid="433068127723164" speed="10">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_0_0.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_0_1.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_0_2.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_0_3.png" />
+                    </animation>
+                    <animation framecount="4" loop="1" name="walk_1" pingpong="0" repeatcount="1" repeatto="0" sid="229629307824197" speed="10">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_1_0.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_1_1.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_1_2.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_1_3.png" />
+                    </animation>
+                    <animation framecount="4" loop="1" name="walk_2" pingpong="0" repeatcount="1" repeatto="0" sid="300672415924836" speed="10">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_2_0.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_2_1.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_2_2.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_2_3.png" />
+                    </animation>
+                    <animation framecount="4" loop="1" name="walk_3" pingpong="0" repeatcount="1" repeatto="0" sid="387057980132317" speed="10">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_3_0.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_3_1.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_3_2.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_3_3.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Tilemaps">
+            <object-type name="tm_rpgbase" sid="243829569996979">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\gamedev\Desktop\ALITD\art\kenneyrpgpack\Spritesheet\RPGpack_sheetx05.png" />
+                <tiles />
+            </object-type>
+            <object-type name="tm_collision" sid="667707119563950">
+                <plugin id="Tilemap" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="965077471691053">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <texture />
+                <tiles />
+            </object-type>
+        </object-folder>
     </object-folder>
     <families />
     <layout-folder>

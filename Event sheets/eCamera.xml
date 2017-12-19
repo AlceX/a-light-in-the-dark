@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>eCamera</name>
+    <events>
+        <event-block sid="976025902502800">
+            <conditions>
+                <condition id="-3" inverted="1" name="Is on-screen" sid="686712580132126" type="obj_player" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="196607442329962">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="308358127414885" type="obj_player">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">ViewportRight(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Scroll to X" sid="205145622990032" type="System">
+                            <param id="0" name="X">scrollx + OriginalWindowWidth</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="631396384437244">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="850044330638053" type="obj_player">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">ViewportLeft(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Scroll to X" sid="179143100260335" type="System">
+                            <param id="0" name="X">scrollx - OriginalWindowWidth</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="352176231002513">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="719309983830635" type="obj_player">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Y co-ordinate">ViewportTop(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-6" name="Scroll to Y" sid="110154581508226" type="System">
+                            <param id="0" name="Y">scrolly - OriginalWindowHeight</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="874438268751033">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="442453876851663" type="obj_player">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Y co-ordinate">ViewportBottom(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-6" name="Scroll to Y" sid="201995214365371" type="System">
+                            <param id="0" name="Y">scrolly + OriginalWindowHeight</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

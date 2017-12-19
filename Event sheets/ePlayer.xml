@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ePlayer</name>
+    <events>
+        <event-block sid="369624389592166">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="716567780308283" type="System" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="120642228177352" type="obj_player">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="216423433043373">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="612996119058317" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="602098794774577" type="spr_player">
+                    <param id="0" name="Object">obj_player</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="837341229580894" type="spr_player">
+                    <param id="0" name="Animation">&quot;walk_&quot; &amp; floor( (((obj_player.Angle + 45) % 360) / 90) )</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="825419148168589">
+            <conditions>
+                <condition behavior="8Direction" id="0" name="Is moving" sid="667284287580731" type="obj_player" />
+            </conditions>
+            <actions>
+                <action id="6" name="Set speed" sid="298381236814094" type="spr_player">
+                    <param id="0" name="Speed">round(lerp(3, 10, unlerp(0, obj_player.8Direction.MaxSpeed, abs(obj_player.8Direction.Speed))))</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="155229358697403">
+            <conditions>
+                <condition id="-22" name="Else" sid="908796207361651" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="576547496491935" type="spr_player">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

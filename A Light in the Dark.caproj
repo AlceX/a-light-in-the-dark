@@ -9,14 +9,18 @@
     <app-id>com.mycompany.myapp</app-id>
     <unique-id>17akzzf9cb4qm</unique-id>
     <saved-with-version>25000</saved-with-version>
-    <used-plugins />
-    <used-behaviors />
+    <used-plugins>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+    </used-behaviors>
     <used-effects />
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
     <window-size>
-        <width>854</width>
+        <width>640</width>
         <height>480</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
@@ -33,17 +37,62 @@
         <prop name="Pause on unfocus">No</prop>
         <prop name="Physics engine">Box2D asm.js</prop>
         <prop name="Preload sounds">Yes</prop>
-        <prop name="Preview browser">(default)</prop>
+        <prop name="Preview browser">NW.js</prop>
         <prop name="Sampling">Linear</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
-    <object-folder />
+    <object-folder>
+        <object-type name="obj_player" sid="467835110333252">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="8Direction" sid="822028737545692">
+                    <behavior id="EightDir" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="739632854001814" speed="5">
+                    <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="spr_player" sid="240127954000570">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="4" loop="1" name="walk_0" pingpong="0" repeatcount="1" repeatto="0" sid="433068127723164" speed="10">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_0_0.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_0_1.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_0_2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_0_3.png" />
+                </animation>
+                <animation framecount="4" loop="1" name="walk_1" pingpong="0" repeatcount="1" repeatto="0" sid="229629307824197" speed="10">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_1_0.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_1_1.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_1_2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_1_3.png" />
+                </animation>
+                <animation framecount="4" loop="1" name="walk_2" pingpong="0" repeatcount="1" repeatto="0" sid="300672415924836" speed="10">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_2_0.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_2_1.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_2_2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_2_3.png" />
+                </animation>
+                <animation framecount="4" loop="1" name="walk_3" pingpong="0" repeatcount="1" repeatto="0" sid="387057980132317" speed="10">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_3_0.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_3_1.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_3_2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_3_3.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
     <families />
     <layout-folder>
-        <layout>Layout 1.xml</layout>
+        <layout>test.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>ePlayer.xml</event-sheet>
+        <event-sheet>elMain.xml</event-sheet>
+        <event-sheet>eCamera.xml</event-sheet>
     </event-folder>
     <global-instances />
     <sounds-folder />

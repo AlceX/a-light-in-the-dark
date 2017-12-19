@@ -22,12 +22,31 @@
                 <action id="-15" name="Set visible" sid="156356898952608" type="spr_torch_light">
                     <param id="0" name="Visibility">0</param>
                 </action>
+                <action id="-26" name="Move to layer" sid="373045411630887" type="spr_torch_light">
+                    <param id="0" name="Layer">&quot;black&quot;</param>
+                </action>
             </actions>
+            <sub-events>
+                <event-block sid="403613811393205">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="674429222694183" type="spr_torch">
+                            <param id="0" name="Instance variable">is_lit</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="263763455228517" type="Function">
+                            <param id="0" name="Name">&quot;eTorches.Light_Torch&quot;</param>
+                            <param id="1" name="Parameter {n}">spr_torch.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
+        <comment>Called from ePlayer.</comment>
         <event-block sid="812889329473886">
             <conditions>
                 <condition id="0" name="On function" sid="285486436286647" type="Function">
-                    <param id="0" name="Name">&quot;eTorches.light_torch&quot;</param>
+                    <param id="0" name="Name">&quot;eTorches.Light_Torch&quot;</param>
                 </condition>
             </conditions>
             <actions />
@@ -39,7 +58,12 @@
                             <param id="0" name="Unique ID">Function.Param(0)</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="122722391248148" type="spr_torch">
+                            <param id="0" name="Instance variable">is_lit</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
                     <sub-events>
                         <event-block sid="853604448295271">
                             <conditions>

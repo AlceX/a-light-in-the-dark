@@ -122,6 +122,7 @@
                 <plugin id="Sprite" />
                 <instance-variables>
                     <instance-variable comment='&quot;normal&quot;, &quot;timed&quot;' name="type" sid="710368218694502" type="string" />
+                    <instance-variable name="is_lit" sid="801355046223489" type="boolean" />
                 </instance-variables>
                 <container>
                     <type>spr_torch</type>

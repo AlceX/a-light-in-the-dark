@@ -64,6 +64,21 @@
                     <param id="1" name="Image point (optional)">0</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="982327658054988">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="450395998783264" type="obj_player">
+                            <param id="0" name="Object">spr_torch</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="807342360602146" type="Function">
+                            <param id="0" name="Name">&quot;eTorches.light_torch&quot;</param>
+                            <param id="1" name="Parameter {n}">spr_torch.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>

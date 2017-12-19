@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>eTorches</name>
+    <events>
+        <event-block sid="373035939538031">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="809720603553199" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="387436926462636" type="spr_fire">
+                    <param id="0" name="X">spr_torch.X</param>
+                    <param id="1" name="Y">spr_torch.Y - 14</param>
+                </action>
+                <action id="-15" name="Set visible" sid="931521582383589" type="spr_fire">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-3" name="Set position" sid="683712763742627" type="spr_torch_light">
+                    <param id="0" name="X">spr_torch.X</param>
+                    <param id="1" name="Y">spr_torch.Y - 23</param>
+                </action>
+                <action id="-15" name="Set visible" sid="156356898952608" type="spr_torch_light">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="812889329473886">
+            <conditions>
+                <condition id="0" name="On function" sid="285486436286647" type="Function">
+                    <param id="0" name="Name">&quot;eTorches.light_torch&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>0 - UID of the torch</comment>
+                <event-block sid="697032662613953">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="764410015337826" type="spr_torch">
+                            <param id="0" name="Unique ID">Function.Param(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="853604448295271">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="768995961947821" type="spr_torch">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;normal&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="807789878350251" type="spr_torch_light">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="946697962273851" type="spr_fire">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

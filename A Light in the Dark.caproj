@@ -10,6 +10,7 @@
     <unique-id>17akzzf9cb4qm</unique-id>
     <saved-with-version>25000</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
     </used-plugins>
@@ -116,6 +117,68 @@
                 <tiles />
             </object-type>
         </object-folder>
+        <object-folder name="Torches">
+            <object-type name="spr_torch" sid="603674886976979">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable comment='&quot;normal&quot;, &quot;timed&quot;' name="type" sid="710368218694502" type="string" />
+                </instance-variables>
+                <container>
+                    <type>spr_torch</type>
+                    <type>spr_fire</type>
+                    <type>spr_torch_light</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="545153073469429" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.958333" original-source="C:\Users\gamedev\Desktop\ALITD\art\roguelike-pack\torch.png">
+                            <collision-poly>
+                                <point x="0.0722222" y="0.0568182" />
+                                <point x="0.438889" y="0" />
+                                <point x="0.927778" y="0.0568182" />
+                                <point x="1" y="0.450758" />
+                                <point x="0.927778" y="0.943182" />
+                                <point x="0.438889" y="1" />
+                                <point x="0.0722222" y="0.943182" />
+                                <point x="0" y="0.450758" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="spr_fire" sid="406949911175075">
+                <plugin id="Sprite" />
+                <container>
+                    <type>spr_torch</type>
+                    <type>spr_fire</type>
+                    <type>spr_torch_light</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="3" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="477615394670046" speed="7">
+                        <frame duration="1" hotspotX="0.53125" hotspotY="0.96875" />
+                        <frame duration="1" hotspotX="0.53125" hotspotY="0.96875" />
+                        <frame duration="1" hotspotX="0.53125" hotspotY="0.96875" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="spr_torch_light" sid="621736192755926">
+                <plugin id="Sprite" />
+                <container>
+                    <type>spr_torch</type>
+                    <type>spr_fire</type>
+                    <type>spr_torch_light</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="926903038785811" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="System">
+            <object-type name="Function" sid="372094897807743">
+                <plugin id="Function" />
+            </object-type>
+        </object-folder>
     </object-folder>
     <families />
     <layout-folder>
@@ -125,8 +188,11 @@
         <event-sheet>ePlayer.xml</event-sheet>
         <event-sheet>elMain.xml</event-sheet>
         <event-sheet>eCamera.xml</event-sheet>
+        <event-sheet>eTorches.xml</event-sheet>
     </event-folder>
-    <global-instances />
+    <global-instances>
+        <global-instance type="Function" uid="7" />
+    </global-instances>
     <sounds-folder />
     <music-folder />
     <files-folder>

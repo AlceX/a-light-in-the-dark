@@ -16,6 +16,7 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
@@ -206,15 +207,26 @@
             </object-type>
             <object-type name="spr_bridge" sid="676340911823421">
                 <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable comment='List with separator &quot;|&quot;' name="uid_torches_to_light" sid="580040212106251" type="string" />
+                    <instance-variable name="is_enabled" sid="406522253531956" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Solid" sid="137149328986362">
+                        <behavior id="solid" />
+                    </behavior-type>
+                    <behavior-type name="Fade" sid="933367824591847">
+                        <behavior id="Fade" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="365774534432250" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.503145" original-source="C:\Users\gamedev\Desktop\ALITD\art\bridge.png">
                             <collision-poly>
-                                <point x="0.0104167" y="0.00628931" />
-                                <point x="0.979167" y="0.0125786" />
-                                <point x="1" y="0.496855" />
-                                <point x="0.989583" y="0.993711" />
-                                <point x="0.0104167" y="0.993711" />
+                                <point x="0" y="0.0927673" />
+                                <point x="1" y="0.0927673" />
+                                <point x="1" y="0.698113" />
+                                <point x="0" y="0.699686" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -228,10 +240,13 @@
         <layout>Level.xml</layout>
     </layout-folder>
     <event-folder>
+        <event-folder name="Layouts">
+            <event-sheet>elLevel.xml</event-sheet>
+        </event-folder>
         <event-sheet>ePlayer.xml</event-sheet>
-        <event-sheet>elLevel.xml</event-sheet>
         <event-sheet>eCamera.xml</event-sheet>
         <event-sheet>eTorches.xml</event-sheet>
+        <event-sheet>eEvents.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Function" uid="7" />

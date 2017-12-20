@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>eEvents</name>
+    <events>
+        <event-group description="Handles bridges appearing when you light the appropiate torches." sid="167110302948674" title="eEvents/Bridges">
+            <sub-events>
+                <event-block sid="949247770590745">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="734565069104899" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="893225630716561">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="240843410437288" type="System">
+                                    <param id="0" name="Object">spr_bridge</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="746475310436834">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="892283771490022" type="spr_bridge">
+                                            <param id="0" name="Instance variable">is_enabled</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="489504022130460" type="spr_bridge">
+                                            <param id="0" name="Opacity">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="778045315303490">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="238322366551414" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="684215809222425" type="spr_bridge">
+                                            <param id="0" name="Opacity">100</param>
+                                        </action>
+                                        <action behavior="Solid" id="0" name="Set enabled" sid="176631496864714" type="spr_bridge">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="622783043054605">
+                    <conditions>
+                        <condition id="-10" name="Compare opacity" sid="951234866253598" type="spr_bridge">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Opacity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="104754584006731">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="484839307451647" type="System">
+                                    <param id="0" name="Object">spr_bridge</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable comment="True untill set false." constant="0" name="are_all_lit" sid="155118391295203" static="0" type="text">true</variable>
+                                <comment>Checks all torches that need to be lit for this bridge.</comment>
+                                <event-block sid="342917630175134">
+                                    <conditions>
+                                        <condition id="-10" name="For" sid="276467030091972" type="System">
+                                            <param id="0" name="Name">&quot;&quot;</param>
+                                            <param id="1" name="Start index">0</param>
+                                            <param id="2" name="End index">tokencount(spr_bridge.uid_torches_to_light, &quot;|&quot;) - 1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="121728459676382">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="388855727146071" type="spr_torch">
+                                                    <param id="0" name="Unique ID">int(tokenat(spr_bridge.uid_torches_to_light, loopindex, &quot;|&quot;))</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="826027933075339">
+                                                    <conditions>
+                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="352664023652176" type="spr_torch">
+                                                            <param id="0" name="Instance variable">is_lit</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="914850680572471" type="System">
+                                                            <param id="0" name="Variable">are_all_lit</param>
+                                                            <param id="1" name="Value">&quot;false&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="644665539911165">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="358939802519973" type="System">
+                                            <param id="0" name="Variable">are_all_lit</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;true&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="390972255886741" type="spr_bridge">
+                                            <param id="0" name="Instance variable">is_enabled</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action behavior="Fade" id="1" name="Start fade" sid="289187266641576" type="spr_bridge" />
+                                        <action behavior="Solid" id="0" name="Set enabled" sid="211622533722272" type="spr_bridge">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

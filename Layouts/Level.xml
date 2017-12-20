@@ -355,6 +355,26 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <uid_torches_to_light>24|25</uid_torches_to_light>
+                        <is_enabled>false</is_enabled>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Solid">
+                            <properties>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>No</active-at-start>
+                                <fade-in-time>2</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>0</fade-out-time>
+                                <destroy>No</destroy>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -384,8 +404,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>3905</x>
-                        <y>3268</y>
+                        <x>3930</x>
+                        <y>3266</y>
                         <z>0</z>
                         <width>20</width>
                         <height>24</height>
@@ -411,7 +431,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>4385</x>
-                        <y>3276</y>
+                        <y>3266</y>
                         <z>0</z>
                         <width>20</width>
                         <height>24</height>

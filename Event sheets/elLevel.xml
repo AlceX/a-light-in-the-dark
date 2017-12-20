@@ -4,6 +4,7 @@
     <name>elLevel</name>
     <events>
         <include>eCamera</include>
+        <include>eEvents</include>
         <include>ePlayer</include>
         <include>eTorches</include>
         <event-block sid="683345073438513">

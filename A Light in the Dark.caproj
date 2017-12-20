@@ -56,6 +56,11 @@
                         <behavior id="EightDir" />
                     </behavior-type>
                 </behaviors>
+                <container>
+                    <type>obj_player</type>
+                    <type>spr_player</type>
+                    <type>spr_player_light</type>
+                </container>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="739632854001814" speed="5">
                         <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
@@ -64,6 +69,11 @@
             </object-type>
             <object-type name="spr_player" sid="240127954000570">
                 <plugin id="Sprite" />
+                <container>
+                    <type>obj_player</type>
+                    <type>spr_player</type>
+                    <type>spr_player_light</type>
+                </container>
                 <animation-folder>
                     <animation framecount="4" loop="1" name="walk_0" pingpong="0" repeatcount="1" repeatto="0" sid="433068127723164" speed="10">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\sokoban_dude\walk_0_0.png" />
@@ -93,8 +103,21 @@
             </object-type>
             <object-type name="spr_player_light" sid="173021250426137">
                 <plugin id="Sprite" />
+                <container>
+                    <type>obj_player</type>
+                    <type>spr_player</type>
+                    <type>spr_player_light</type>
+                </container>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="675696800994584" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="event_torch" sid="565485772441531">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="938475431817573" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
@@ -184,10 +207,11 @@
     <families />
     <layout-folder>
         <layout>test.xml</layout>
+        <layout>Level.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>ePlayer.xml</event-sheet>
-        <event-sheet>elMain.xml</event-sheet>
+        <event-sheet>elLevel.xml</event-sheet>
         <event-sheet>eCamera.xml</event-sheet>
         <event-sheet>eTorches.xml</event-sheet>
     </event-folder>

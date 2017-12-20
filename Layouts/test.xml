@@ -2,7 +2,7 @@
 <c2layout>
     <name>test</name>
     <sid>547965279974100</sid>
-    <event-sheet>elMain</event-sheet>
+    <event-sheet>elLevel</event-sheet>
     <size>
         <width>1280</width>
         <height>960</height>

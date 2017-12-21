@@ -143,6 +143,7 @@
                 <instance-variables>
                     <instance-variable comment='&quot;normal&quot;, &quot;timed&quot;' name="type" sid="710368218694502" type="string" />
                     <instance-variable name="is_lit" sid="801355046223489" type="boolean" />
+                    <instance-variable name="timed_manager_uid" sid="740478820180350" type="number" />
                 </instance-variables>
                 <container>
                     <type>spr_torch</type>
@@ -190,6 +191,24 @@
                 </container>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="926903038785811" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="obj_timed_torch_handler" sid="381198125028936">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable comment='List with separator &quot;|&quot;.' name="torch_uids" sid="298741345861606" type="string" />
+                    <instance-variable name="time_to_light" sid="363091769723816" type="number" />
+                    <instance-variable name="has_started_timer" sid="381549791781444" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Timer" sid="284691649962899">
+                        <behavior id="Timer" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="384469454298360" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>

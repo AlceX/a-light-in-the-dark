@@ -152,6 +152,7 @@
                     <instance-variables>
                         <type>normal</type>
                         <is_lit>false</is_lit>
+                        <timed_manager_uid>0</timed_manager_uid>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -198,8 +199,9 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <type>normal</type>
+                        <type>timed</type>
                         <is_lit>false</is_lit>
+                        <timed_manager_uid>39</timed_manager_uid>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -224,8 +226,9 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <type>normal</type>
-                        <is_lit>true</is_lit>
+                        <type>timed</type>
+                        <is_lit>false</is_lit>
+                        <timed_manager_uid>39</timed_manager_uid>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -238,6 +241,36 @@
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.958333313</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="obj_timed_torch_handler" uid="39">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <torch_uids>9|10</torch_uids>
+                        <time_to_light>3</time_to_light>
+                        <has_started_timer>false</has_started_timer>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Timer" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>271</x>
+                        <y>456</y>
+                        <z>0</z>
+                        <width>32</width>
+                        <height>32</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

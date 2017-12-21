@@ -537,7 +537,7 @@
                     </properties>
                     <instance-variables>
                         <Is_Enabled>false</Is_Enabled>
-                        <Torch_UIDs></Torch_UIDs>
+                        <Torch_UIDs>38</Torch_UIDs>
                         <time_between_shots>1</time_between_shots>
                         <initial_delay>0</initial_delay>
                     </instance-variables>
@@ -594,7 +594,7 @@
                     </properties>
                     <instance-variables>
                         <Is_Enabled>false</Is_Enabled>
-                        <Torch_UIDs></Torch_UIDs>
+                        <Torch_UIDs>38</Torch_UIDs>
                         <time_between_shots>2</time_between_shots>
                         <initial_delay>0</initial_delay>
                     </instance-variables>
@@ -625,7 +625,7 @@
                     </properties>
                     <instance-variables>
                         <Is_Enabled>false</Is_Enabled>
-                        <Torch_UIDs></Torch_UIDs>
+                        <Torch_UIDs>38</Torch_UIDs>
                         <time_between_shots>1</time_between_shots>
                         <initial_delay>0</initial_delay>
                     </instance-variables>
@@ -656,7 +656,7 @@
                     </properties>
                     <instance-variables>
                         <Is_Enabled>false</Is_Enabled>
-                        <Torch_UIDs></Torch_UIDs>
+                        <Torch_UIDs>38</Torch_UIDs>
                         <time_between_shots>1</time_between_shots>
                         <initial_delay>0</initial_delay>
                     </instance-variables>
@@ -687,7 +687,7 @@
                     </properties>
                     <instance-variables>
                         <Is_Enabled>false</Is_Enabled>
-                        <Torch_UIDs></Torch_UIDs>
+                        <Torch_UIDs>38</Torch_UIDs>
                         <time_between_shots>1</time_between_shots>
                         <initial_delay>0</initial_delay>
                     </instance-variables>
@@ -729,7 +729,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>5708.741210938</x>
-                        <y>2121.663818359</y>
+                        <y>2126.663818359</y>
                         <z>0</z>
                         <width>32</width>
                         <height>25</height>
@@ -760,7 +760,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>5708.724121094</x>
-                        <y>2163.953613281</y>
+                        <y>2157.953613281</y>
                         <z>0</z>
                         <width>32</width>
                         <height>25</height>
@@ -787,6 +787,32 @@
                     <world>
                         <x>5281</x>
                         <y>2010</y>
+                        <z>0</z>
+                        <width>20</width>
+                        <height>24</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.958333313</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spr_torch" uid="38">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <type>normal</type>
+                        <is_lit>false</is_lit>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-100</x>
+                        <y>-100</y>
                         <z>0</z>
                         <width>20</width>
                         <height>24</height>

@@ -26,7 +26,7 @@
                                 <condition id="-10" name="For" sid="620693519732793" type="System">
                                     <param id="0" name="Name">&quot;&quot;</param>
                                     <param id="1" name="Start index">0</param>
-                                    <param id="2" name="End index">tokencount(Activeable.torch_uids, &quot;|&quot;) - 1</param>
+                                    <param id="2" name="End index">tokencount(Activeable.Torch_UIDs, &quot;|&quot;) - 1</param>
                                 </condition>
                             </conditions>
                             <actions />
@@ -34,7 +34,7 @@
                                 <event-block sid="574770159170101">
                                     <conditions>
                                         <condition id="-14" name="Pick by unique ID" sid="319209642532554" type="spr_torch">
-                                            <param id="0" name="Unique ID">int(tokenat(Activeable.torch_uids, loopindex, &quot;|&quot;))</param>
+                                            <param id="0" name="Unique ID">int(tokenat(Activeable.Torch_UIDs, loopindex, &quot;|&quot;))</param>
                                         </condition>
                                     </conditions>
                                     <actions />
@@ -136,6 +136,39 @@
                             <param id="0" name="State">0</param>
                         </action>
                     </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Handles turrets deactivating when you light the appropiate torches." sid="145927073043798" title="eEvents/Turrets">
+            <sub-events>
+                <event-block sid="990505575393296">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="756737942613143" type="System">
+                            <param id="0" name="Object">spr_turret</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>I wait 0 to make sure the timer has actually started before stoping it.</comment>
+                        <event-block sid="460817467883813">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="271548948128301" type="spr_turret">
+                                    <param id="0" name="Instance variable">Is_Enabled</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="521440186898509" type="spr_turret">
+                                    <param id="0" name="Opacity">50</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="489940178986664" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
+                                <action behavior="Timer" id="1" name="Stop timer" sid="530273739822797" type="spr_turret">
+                                    <param id="0" name="Tag">&quot;shoot&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>

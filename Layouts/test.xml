@@ -313,7 +313,6 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <behavior-instances>
-                        <behavior-instance type="DestroyOutsideLayout" />
                         <behavior-instance type="Bullet">
                             <properties>
                                 <speed>200</speed>

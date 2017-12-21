@@ -108,8 +108,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>4148</x>
-                        <y>3295</y>
+                        <x>4561</x>
+                        <y>2708</y>
                         <z>0</z>
                         <width>25</width>
                         <height>25</height>
@@ -595,7 +595,7 @@
                     <instance-variables>
                         <Is_Enabled>false</Is_Enabled>
                         <Torch_UIDs></Torch_UIDs>
-                        <time_between_shots>1</time_between_shots>
+                        <time_between_shots>2</time_between_shots>
                         <initial_delay>0</initial_delay>
                     </instance-variables>
                     <behavior-instances>

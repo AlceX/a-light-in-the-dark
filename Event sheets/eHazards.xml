@@ -22,7 +22,7 @@
                                     <param id="0" name="Seconds">spr_turret.initial_delay</param>
                                 </action>
                                 <action behavior="Timer" id="0" name="Start timer" sid="799395870935704" type="spr_turret">
-                                    <param id="0" name="Duration">spr_turret.time_between_shots</param>
+                                    <param id="0" name="Duration">Self.time_between_shots</param>
                                     <param id="1" name="Type">1</param>
                                     <param id="2" name="Tag">&quot;shoot&quot;</param>
                                 </action>
@@ -34,17 +34,35 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="901459891202183">
+                <event-block sid="728116145690948">
                     <conditions>
-                        <condition behavior="Timer" id="0" name="On timer" sid="730732088002514" type="spr_turret">
-                            <param id="0" name="Tag">&quot;shoot&quot;</param>
+                        <condition id="-11" name="For Each" sid="767507791897871" type="System">
+                            <param id="0" name="Object">spr_turret</param>
                         </condition>
                     </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="901459891202183">
+                            <conditions>
+                                <condition behavior="Timer" id="0" name="On timer" sid="730732088002514" type="spr_turret">
+                                    <param id="0" name="Tag">&quot;shoot&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="539502561386305" type="Function">
+                                    <param id="0" name="Name">&quot;eHazards/Turrets.shoot&quot;</param>
+                                    <param id="1" name="Parameter {n}">spr_turret.UID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="479268070248823">
+                    <conditions>
+                        <condition id="-3" inverted="1" name="Is on-screen" sid="237734657908308" type="spr_bullet" />
+                    </conditions>
                     <actions>
-                        <action id="0" name="Call function" sid="539502561386305" type="Function">
-                            <param id="0" name="Name">&quot;eHazards/Turrets.shoot&quot;</param>
-                            <param id="1" name="Parameter {n}">spr_turret.UID</param>
-                        </action>
+                        <action id="-9" name="Destroy" sid="542995011975942" type="spr_bullet" />
                     </actions>
                 </event-block>
                 <event-block sid="260378078563796">

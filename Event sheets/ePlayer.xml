@@ -80,5 +80,25 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <comment>Called from eHazards/Turrets.</comment>
+        <event-block sid="864679290644463">
+            <conditions>
+                <condition id="0" name="On function" sid="458181996845446" type="Function">
+                    <param id="0" name="Name">&quot;ePlayer.Respawn&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="810505496518971">
+                    <conditions />
+                    <actions>
+                        <action id="-3" name="Set position" sid="714627252579139" type="obj_player">
+                            <param id="0" name="X">Self.room_start_x</param>
+                            <param id="1" name="Y">Self.room_start_y</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
     </events>
 </c2eventsheet>

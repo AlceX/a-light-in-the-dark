@@ -7,7 +7,16 @@
             <conditions>
                 <condition id="-3" inverted="1" name="Is on-screen" sid="686712580132126" type="obj_player" />
             </conditions>
-            <actions />
+            <actions>
+                <action id="-10" name="Set value" sid="305397185978432" type="obj_player">
+                    <param id="0" name="Instance variable">room_start_x</param>
+                    <param id="1" name="Value">Self.X</param>
+                </action>
+                <action id="-10" name="Set value" sid="150358900915761" type="obj_player">
+                    <param id="0" name="Instance variable">room_start_y</param>
+                    <param id="1" name="Value">Self.Y</param>
+                </action>
+            </actions>
             <sub-events>
                 <event-block sid="196607442329962">
                     <conditions>

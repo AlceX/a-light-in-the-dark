@@ -15,8 +15,11 @@
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
@@ -51,6 +54,8 @@
                 <plugin id="Sprite" />
                 <instance-variables>
                     <instance-variable name="has_light" sid="281012660375812" type="boolean" />
+                    <instance-variable name="room_start_x" sid="462728022570745" type="number" />
+                    <instance-variable name="room_start_y" sid="933987934723961" type="number" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="8Direction" sid="822028737545692">
@@ -232,6 +237,60 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="spr_turret" sid="683203011340658">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="time_between_shots" sid="337735795203540" type="number" />
+                    <instance-variable comment="Delay from layout start to first shoot." name="initial_delay" sid="174909120835413" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Timer" sid="117851046174461">
+                        <behavior id="Timer" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="302459642164316" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.52" original-source="C:\Users\gamedev\Desktop\ALITD\art\turret.png">
+                            <collision-poly>
+                                <point x="0" y="0" />
+                                <point x="0.5" y="0" />
+                                <point x="0.9375" y="0.08" />
+                                <point x="0.78125" y="0.48" />
+                                <point x="0.65625" y="0.56" />
+                                <point x="0.5" y="1" />
+                                <point x="0.125" y="0.84" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="spr_bullet" sid="124762143019129">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="DestroyOutsideLayout" sid="209639737521482">
+                        <behavior id="destroy" />
+                    </behavior-type>
+                    <behavior-type name="Bullet" sid="720602102725184">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="719216239186572" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.555556" original-source="C:\Users\gamedev\Desktop\ALITD\art\bullet.png">
+                            <collision-poly>
+                                <point x="0.916667" y="0.111111" />
+                                <point x="1" y="0.444444" />
+                                <point x="0.916667" y="0.888889" />
+                                <point x="0.5" y="1" />
+                                <point x="0.0833333" y="0.888889" />
+                                <point x="0" y="0.444444" />
+                                <point x="0.0833333" y="0.111111" />
+                                <point x="0.5" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
     </object-folder>
     <families />
@@ -247,6 +306,7 @@
         <event-sheet>eCamera.xml</event-sheet>
         <event-sheet>eTorches.xml</event-sheet>
         <event-sheet>eEvents.xml</event-sheet>
+        <event-sheet>eHazards.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Function" uid="7" />

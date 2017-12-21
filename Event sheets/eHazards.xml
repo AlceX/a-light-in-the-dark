@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>eHazards</name>
+    <events>
+        <event-group description="" sid="806952693420388" title="eHazards/Turrets">
+            <sub-events>
+                <event-block sid="326830242977320">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="909947614885435" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="230598210210935">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="996314505311501" type="System">
+                                    <param id="0" name="Object">spr_turret</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="399573239606288" type="System">
+                                    <param id="0" name="Seconds">spr_turret.initial_delay</param>
+                                </action>
+                                <action behavior="Timer" id="0" name="Start timer" sid="799395870935704" type="spr_turret">
+                                    <param id="0" name="Duration">spr_turret.time_between_shots</param>
+                                    <param id="1" name="Type">1</param>
+                                    <param id="2" name="Tag">&quot;shoot&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="733722024119402" type="Function">
+                                    <param id="0" name="Name">&quot;eHazards/Turrets.shoot&quot;</param>
+                                    <param id="1" name="Parameter {n}">spr_turret.UID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="901459891202183">
+                    <conditions>
+                        <condition behavior="Timer" id="0" name="On timer" sid="730732088002514" type="spr_turret">
+                            <param id="0" name="Tag">&quot;shoot&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="539502561386305" type="Function">
+                            <param id="0" name="Name">&quot;eHazards/Turrets.shoot&quot;</param>
+                            <param id="1" name="Parameter {n}">spr_turret.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="260378078563796">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="244457166939661" type="spr_bullet">
+                            <param id="0" name="Object">obj_player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="767915150981885" type="Function">
+                            <param id="0" name="Name">&quot;ePlayer.Respawn&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="720832424958742">
+                    <conditions>
+                        <condition id="0" name="On function" sid="789206278432765" type="Function">
+                            <param id="0" name="Name">&quot;eHazards/Turrets.shoot&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="868379092857466">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="964846979139814" type="spr_turret">
+                                    <param id="0" name="Unique ID">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="558706054467057" type="spr_turret">
+                                    <param id="0" name="Object">spr_bullet</param>
+                                    <param id="1" name="Layer">&quot;obj&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-24" name="Move to top" sid="355084803352958" type="spr_bullet" />
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="749720740186823" type="spr_bullet">
+                                    <param id="0" name="Angle">spr_turret.Angle</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

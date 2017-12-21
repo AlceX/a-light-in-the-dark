@@ -3,6 +3,78 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>eEvents</name>
     <events>
+        <event-block sid="261202099730039">
+            <conditions>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="589590201740101" type="Activeable">
+                    <param id="0" name="Instance variable">Is_Enabled</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="875029560627337">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="267503553163672" type="System">
+                            <param id="0" name="Object">Activeable</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable comment="True untill set false." constant="0" name="are_all_lit" sid="478993068837338" static="0" type="text">true</variable>
+                        <comment>Checks all torches that need to be lit for this bridge.</comment>
+                        <event-block sid="600130805338965">
+                            <conditions>
+                                <condition id="-10" name="For" sid="620693519732793" type="System">
+                                    <param id="0" name="Name">&quot;&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">tokencount(Activeable.torch_uids, &quot;|&quot;) - 1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="574770159170101">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="319209642532554" type="spr_torch">
+                                            <param id="0" name="Unique ID">int(tokenat(Activeable.torch_uids, loopindex, &quot;|&quot;))</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="900217153698201">
+                                            <conditions>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="527956879178040" type="spr_torch">
+                                                    <param id="0" name="Instance variable">is_lit</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="832099480858155" type="System">
+                                                    <param id="0" name="Variable">are_all_lit</param>
+                                                    <param id="1" name="Value">&quot;false&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="128475472919566">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="401310106630268" type="System">
+                                    <param id="0" name="Variable">are_all_lit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;true&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="778739770987764" type="Activeable">
+                                    <param id="0" name="Instance variable">Is_Enabled</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
         <event-group description="Handles bridges appearing when you light the appropiate torches." sid="167110302948674" title="eEvents/Bridges">
             <sub-events>
                 <event-block sid="949247770590745">
@@ -22,7 +94,7 @@
                                 <event-block sid="746475310436834">
                                     <conditions>
                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="892283771490022" type="spr_bridge">
-                                            <param id="0" name="Instance variable">is_enabled</param>
+                                            <param id="0" name="Instance variable">Is_Enabled</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -48,82 +120,22 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="622783043054605">
+                <event-block sid="857321367118853">
                     <conditions>
-                        <condition id="-10" name="Compare opacity" sid="951234866253598" type="spr_bridge">
+                        <condition id="-8" name="Is boolean instance variable set" sid="935662474068126" type="spr_bridge">
+                            <param id="0" name="Instance variable">Is_Enabled</param>
+                        </condition>
+                        <condition id="-10" name="Compare opacity" sid="707133648611951" type="spr_bridge">
                             <param id="0" name="Comparison">0</param>
                             <param id="1" name="Opacity">0</param>
                         </condition>
                     </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="104754584006731">
-                            <conditions>
-                                <condition id="-11" name="For Each" sid="484839307451647" type="System">
-                                    <param id="0" name="Object">spr_bridge</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <variable comment="True untill set false." constant="0" name="are_all_lit" sid="155118391295203" static="0" type="text">true</variable>
-                                <comment>Checks all torches that need to be lit for this bridge.</comment>
-                                <event-block sid="342917630175134">
-                                    <conditions>
-                                        <condition id="-10" name="For" sid="276467030091972" type="System">
-                                            <param id="0" name="Name">&quot;&quot;</param>
-                                            <param id="1" name="Start index">0</param>
-                                            <param id="2" name="End index">tokencount(spr_bridge.uid_torches_to_light, &quot;|&quot;) - 1</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions />
-                                    <sub-events>
-                                        <event-block sid="121728459676382">
-                                            <conditions>
-                                                <condition id="-14" name="Pick by unique ID" sid="388855727146071" type="spr_torch">
-                                                    <param id="0" name="Unique ID">int(tokenat(spr_bridge.uid_torches_to_light, loopindex, &quot;|&quot;))</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions />
-                                            <sub-events>
-                                                <event-block sid="826027933075339">
-                                                    <conditions>
-                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="352664023652176" type="spr_torch">
-                                                            <param id="0" name="Instance variable">is_lit</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="-9" name="Set value" sid="914850680572471" type="System">
-                                                            <param id="0" name="Variable">are_all_lit</param>
-                                                            <param id="1" name="Value">&quot;false&quot;</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                            </sub-events>
-                                        </event-block>
-                                    </sub-events>
-                                </event-block>
-                                <event-block sid="644665539911165">
-                                    <conditions>
-                                        <condition id="-14" name="Compare variable" sid="358939802519973" type="System">
-                                            <param id="0" name="Variable">are_all_lit</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">&quot;true&quot;</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-13" name="Set boolean" sid="390972255886741" type="spr_bridge">
-                                            <param id="0" name="Instance variable">is_enabled</param>
-                                            <param id="1" name="Value">1</param>
-                                        </action>
-                                        <action behavior="Fade" id="1" name="Start fade" sid="289187266641576" type="spr_bridge" />
-                                        <action behavior="Solid" id="0" name="Set enabled" sid="211622533722272" type="spr_bridge">
-                                            <param id="0" name="State">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                    </sub-events>
+                    <actions>
+                        <action behavior="Fade" id="1" name="Start fade" sid="995897505399546" type="spr_bridge" />
+                        <action behavior="Solid" id="0" name="Set enabled" sid="606423088157437" type="spr_bridge">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>

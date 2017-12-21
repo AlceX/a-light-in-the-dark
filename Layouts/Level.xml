@@ -108,8 +108,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>4550</x>
-                        <y>2624</y>
+                        <x>4148</x>
+                        <y>3295</y>
                         <z>0</z>
                         <width>25</width>
                         <height>25</height>
@@ -358,8 +358,8 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <uid_torches_to_light>24|25</uid_torches_to_light>
-                        <is_enabled>false</is_enabled>
+                        <Is_Enabled>false</Is_Enabled>
+                        <Torch_UIDs>24|25</Torch_UIDs>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Solid">
@@ -452,8 +452,8 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <uid_torches_to_light></uid_torches_to_light>
-                        <is_enabled>false</is_enabled>
+                        <Is_Enabled>false</Is_Enabled>
+                        <Torch_UIDs></Torch_UIDs>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Solid">
@@ -494,8 +494,8 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <uid_torches_to_light></uid_torches_to_light>
-                        <is_enabled>false</is_enabled>
+                        <Is_Enabled>false</Is_Enabled>
+                        <Torch_UIDs></Torch_UIDs>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Solid">
@@ -536,6 +536,8 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <Is_Enabled>false</Is_Enabled>
+                        <Torch_UIDs></Torch_UIDs>
                         <time_between_shots>1</time_between_shots>
                         <initial_delay>0</initial_delay>
                     </instance-variables>

@@ -212,10 +212,6 @@
             </object-type>
             <object-type name="spr_bridge" sid="676340911823421">
                 <plugin id="Sprite" />
-                <instance-variables>
-                    <instance-variable comment='List with separator &quot;|&quot;' name="uid_torches_to_light" sid="580040212106251" type="string" />
-                    <instance-variable name="is_enabled" sid="406522253531956" type="boolean" />
-                </instance-variables>
                 <behaviors>
                     <behavior-type name="Solid" sid="137149328986362">
                         <behavior id="solid" />
@@ -293,7 +289,18 @@
             </object-type>
         </object-folder>
     </object-folder>
-    <families />
+    <families>
+        <family name="Activeable" plugin-id="Sprite" sid="930276602837141">
+            <members>
+                <member>spr_bridge</member>
+                <member>spr_turret</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="Is_Enabled" sid="876675496414164" type="boolean" />
+                <instance-variable comment='List with &quot;|&quot; separator.' name="Torch_UIDs" sid="866067486367695" type="string" />
+            </instance-variables>
+        </family>
+    </families>
     <layout-folder>
         <layout>test.xml</layout>
         <layout>Level.xml</layout>

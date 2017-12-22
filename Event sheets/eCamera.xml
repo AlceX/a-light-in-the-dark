@@ -16,6 +16,10 @@
                     <param id="0" name="Instance variable">room_start_y</param>
                     <param id="1" name="Value">Self.Y</param>
                 </action>
+                <action id="0" name="Call function" sid="288591811601586" type="Function">
+                    <param id="0" name="Name">&quot;eEvents/Respawn.Clear_Events&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="196607442329962">

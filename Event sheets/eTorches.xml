@@ -122,6 +122,10 @@
                                     <param id="0" name="Instance variable">is_lit</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
+                                <action id="0" name="Call function" sid="496910813936497" type="Function">
+                                    <param id="0" name="Name">&quot;eEvents/Respawn.Add_Event&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;torch_&quot; &amp; spr_torch.UID</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="521490670602086">

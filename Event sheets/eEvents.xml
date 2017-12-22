@@ -70,6 +70,34 @@
                                     <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="951466253091372">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="549678601448620" type="spr_bridge">
+                                            <param id="0" name="Unique ID">Activeable.UID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="502131552438209" type="Function">
+                                            <param id="0" name="Name">&quot;eEvents/Respawn.Add_Event&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;bridge_&quot; &amp; spr_bridge.UID</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="942920050704706">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="574355049889897" type="spr_turret">
+                                            <param id="0" name="Unique ID">Activeable.UID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="301135938726725" type="Function">
+                                            <param id="0" name="Name">&quot;eEvents/Respawn.Add_Event&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;turret_&quot; &amp; spr_turret.UID</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -131,7 +159,7 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action behavior="Fade" id="1" name="Start fade" sid="995897505399546" type="spr_bridge" />
+                        <action behavior="Fade" id="0" name="Restart fade" sid="954141634935425" type="spr_bridge" />
                         <action behavior="Solid" id="0" name="Set enabled" sid="606423088157437" type="spr_bridge">
                             <param id="0" name="State">0</param>
                         </action>
@@ -149,7 +177,6 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <comment>I wait 0 to make sure the timer has actually started before stoping it.</comment>
                         <event-block sid="460817467883813">
                             <conditions>
                                 <condition id="-8" name="Is boolean instance variable set" sid="271548948128301" type="spr_turret">
@@ -160,11 +187,219 @@
                                 <action id="-16" name="Set opacity" sid="521440186898509" type="spr_turret">
                                     <param id="0" name="Opacity">50</param>
                                 </action>
-                                <action id="-16" name="Wait" sid="489940178986664" type="System">
-                                    <param id="0" name="Seconds">0</param>
-                                </action>
                                 <action behavior="Timer" id="1" name="Stop timer" sid="530273739822797" type="spr_turret">
                                     <param id="0" name="Tag">&quot;shoot&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Handles restarting the room when the player respwans." sid="922940337159838" title="eEvents/Respawn">
+            <sub-events>
+                <variable comment='List with &quot;|&quot; separator.' constant="0" name="events" sid="669458307739849" static="1" type="text"></variable>
+                <comment>Timed torches are events too... agh might leave that for later.</comment>
+                <event-block sid="360078332243874">
+                    <conditions>
+                        <condition id="0" name="On function" sid="910193538682981" type="Function">
+                            <param id="0" name="Name">&quot;eEvents/Respawn.execute&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="710121909251701">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Destroy" sid="254493962153205" type="spr_bullet" />
+                                <action id="0" name="Call function" sid="390762793643346" type="Function">
+                                    <param id="0" name="Name">&quot;ePlayer.Respawn&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="880754633735110">
+                            <conditions>
+                                <condition id="-10" name="For" sid="246639730592327" type="System">
+                                    <param id="0" name="Name">&quot;&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">tokencount(events, &quot;|&quot;) - 1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable constant="0" name="event" sid="411497087874997" static="0" type="text"></variable>
+                                <event-block sid="482789661716465">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="310317499991440" type="System">
+                                            <param id="0" name="Variable">event</param>
+                                            <param id="1" name="Value">tokenat(events, loopindex, &quot;|&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="596153216542035">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="327229953833072" type="System">
+                                            <param id="0" name="First value">left(event, 5)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;torch&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="191113414370108">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="221952318795541" type="spr_torch">
+                                                    <param id="0" name="Unique ID">int(tokenat(event, 1, &quot;_&quot;))</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-15" name="Set visible" sid="984304964401356" type="spr_torch_light">
+                                                    <param id="0" name="Visibility">0</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="155420208445223" type="spr_fire">
+                                                    <param id="0" name="Visibility">0</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="814165911409009" type="spr_torch">
+                                                    <param id="0" name="Instance variable">is_lit</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="213469289238709">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="535252600570646" type="System">
+                                            <param id="0" name="First value">left(event, 6)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;bridge&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="952958395165377">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="358602686763038" type="spr_bridge">
+                                                    <param id="0" name="Unique ID">int(tokenat(event, 1, &quot;_&quot;))</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-16" name="Set opacity" sid="321525541388128" type="spr_bridge">
+                                                    <param id="0" name="Opacity">0</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="338225352387208" type="spr_bridge">
+                                                    <param id="0" name="Instance variable">Is_Enabled</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action behavior="Solid" id="0" name="Set enabled" sid="541531818119768" type="spr_bridge">
+                                                    <param id="0" name="State">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="578550045856817">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="236836124303552" type="System">
+                                            <param id="0" name="First value">left(event, 6)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;turret&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="708458035406443">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="508122094137986" type="spr_turret">
+                                                    <param id="0" name="Unique ID">int(tokenat(event, 1, &quot;_&quot;))</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-16" name="Wait" sid="742382536110084" type="System">
+                                                    <param id="0" name="Seconds">spr_turret.initial_delay</param>
+                                                </action>
+                                                <action id="-16" name="Set opacity" sid="335087926264728" type="spr_turret">
+                                                    <param id="0" name="Opacity">100</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="517656366961566" type="spr_turret">
+                                                    <param id="0" name="Instance variable">Is_Enabled</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action behavior="Timer" id="0" name="Start timer" sid="426644679096030" type="spr_turret">
+                                                    <param id="0" name="Duration">Self.time_between_shots</param>
+                                                    <param id="1" name="Type">1</param>
+                                                    <param id="2" name="Tag">&quot;shoot&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="848247952295548">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="439898868875873" type="System">
+                                    <param id="0" name="Variable">events</param>
+                                    <param id="1" name="Value">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Called from this script and eTorches.</comment>
+                <event-block sid="310920382776266">
+                    <conditions>
+                        <condition id="0" name="On function" sid="788320358299861" type="Function">
+                            <param id="0" name="Name">&quot;eEvents/Respawn.Add_Event&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="401677764836761">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="894501217680495" type="System">
+                                    <param id="0" name="Variable">events</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="108392157772451" type="System">
+                                    <param id="0" name="Variable">events</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="913268796406457">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="865066851541837" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="619278298733351" type="System">
+                                    <param id="0" name="Variable">events</param>
+                                    <param id="1" name="Value">events &amp; &quot;|&quot; &amp; Function.Param(0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="279209677148895">
+                    <conditions>
+                        <condition id="0" name="On function" sid="304437542985669" type="Function">
+                            <param id="0" name="Name">&quot;eEvents/Respawn.Clear_Events&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="601179338751544">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="289118827876352" type="System">
+                                    <param id="0" name="Variable">events</param>
+                                    <param id="1" name="Value">&quot;&quot;</param>
                                 </action>
                             </actions>
                         </event-block>

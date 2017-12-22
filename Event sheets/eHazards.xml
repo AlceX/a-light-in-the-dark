@@ -73,7 +73,7 @@
                     </conditions>
                     <actions>
                         <action id="0" name="Call function" sid="767915150981885" type="Function">
-                            <param id="0" name="Name">&quot;ePlayer.Respawn&quot;</param>
+                            <param id="0" name="Name">&quot;eEvents/Respawn.execute&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>

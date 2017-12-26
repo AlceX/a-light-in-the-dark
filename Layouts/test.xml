@@ -153,6 +153,7 @@
                         <type>normal</type>
                         <is_lit>false</is_lit>
                         <timed_manager_uid>0</timed_manager_uid>
+                        <long_distance_uid>0</long_distance_uid>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -202,6 +203,7 @@
                         <type>timed</type>
                         <is_lit>false</is_lit>
                         <timed_manager_uid>39</timed_manager_uid>
+                        <long_distance_uid>0</long_distance_uid>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -229,6 +231,7 @@
                         <type>timed</type>
                         <is_lit>false</is_lit>
                         <timed_manager_uid>39</timed_manager_uid>
+                        <long_distance_uid>0</long_distance_uid>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>

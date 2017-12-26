@@ -108,8 +108,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>4561</x>
-                        <y>2708</y>
+                        <x>4350</x>
+                        <y>2652</y>
                         <z>0</z>
                         <width>25</width>
                         <height>25</height>
@@ -131,6 +131,7 @@
                         <type>normal</type>
                         <is_lit>true</is_lit>
                         <timed_manager_uid>0</timed_manager_uid>
+                        <long_distance_uid>0</long_distance_uid>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -158,6 +159,7 @@
                         <type>normal</type>
                         <is_lit>true</is_lit>
                         <timed_manager_uid>0</timed_manager_uid>
+                        <long_distance_uid>0</long_distance_uid>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -185,6 +187,7 @@
                         <type>normal</type>
                         <is_lit>true</is_lit>
                         <timed_manager_uid>0</timed_manager_uid>
+                        <long_distance_uid>0</long_distance_uid>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -212,6 +215,7 @@
                         <type>normal</type>
                         <is_lit>true</is_lit>
                         <timed_manager_uid>0</timed_manager_uid>
+                        <long_distance_uid>0</long_distance_uid>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -261,6 +265,7 @@
                         <type>normal</type>
                         <is_lit>false</is_lit>
                         <timed_manager_uid>0</timed_manager_uid>
+                        <long_distance_uid>0</long_distance_uid>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -288,6 +293,7 @@
                         <type>normal</type>
                         <is_lit>false</is_lit>
                         <timed_manager_uid>0</timed_manager_uid>
+                        <long_distance_uid>0</long_distance_uid>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -315,6 +321,7 @@
                         <type>normal</type>
                         <is_lit>false</is_lit>
                         <timed_manager_uid>0</timed_manager_uid>
+                        <long_distance_uid>0</long_distance_uid>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -342,6 +349,7 @@
                         <type>normal</type>
                         <is_lit>false</is_lit>
                         <timed_manager_uid>0</timed_manager_uid>
+                        <long_distance_uid>0</long_distance_uid>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -411,6 +419,7 @@
                         <type>normal</type>
                         <is_lit>false</is_lit>
                         <timed_manager_uid>0</timed_manager_uid>
+                        <long_distance_uid>0</long_distance_uid>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -438,6 +447,7 @@
                         <type>normal</type>
                         <is_lit>false</is_lit>
                         <timed_manager_uid>0</timed_manager_uid>
+                        <long_distance_uid>0</long_distance_uid>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -577,9 +587,10 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <type>normal</type>
+                        <type>long_distance</type>
                         <is_lit>false</is_lit>
                         <timed_manager_uid>0</timed_manager_uid>
+                        <long_distance_uid>40</long_distance_uid>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -793,6 +804,7 @@
                         <type>normal</type>
                         <is_lit>false</is_lit>
                         <timed_manager_uid>0</timed_manager_uid>
+                        <long_distance_uid>0</long_distance_uid>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -820,12 +832,41 @@
                         <type>normal</type>
                         <is_lit>false</is_lit>
                         <timed_manager_uid>0</timed_manager_uid>
+                        <long_distance_uid>0</long_distance_uid>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>-100</x>
                         <y>-100</y>
+                        <z>0</z>
+                        <width>20</width>
+                        <height>24</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.958333313</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spr_torch" uid="40">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <type>long_distance</type>
+                        <is_lit>false</is_lit>
+                        <timed_manager_uid>0</timed_manager_uid>
+                        <long_distance_uid>30</long_distance_uid>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>3922</x>
+                        <y>2735</y>
                         <z>0</z>
                         <width>20</width>
                         <height>24</height>

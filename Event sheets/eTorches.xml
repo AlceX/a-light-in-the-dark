@@ -100,69 +100,102 @@
                             <param id="0" name="Unique ID">Function.Param(0)</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="807789878350251" type="spr_torch_light">
-                            <param id="0" name="Visibility">1</param>
-                        </action>
-                        <action id="-15" name="Set visible" sid="946697962273851" type="spr_fire">
-                            <param id="0" name="Visibility">1</param>
-                        </action>
-                    </actions>
+                    <actions />
                     <sub-events>
-                        <event-block sid="853604448295271">
+                        <event-block sid="696203897464312">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="768995961947821" type="spr_torch">
-                                    <param id="0" name="Instance variable">type</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;normal&quot;</param>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="557148427583896" type="spr_torch">
+                                    <param id="0" name="Instance variable">is_lit</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-13" name="Set boolean" sid="122722391248148" type="spr_torch">
-                                    <param id="0" name="Instance variable">is_lit</param>
-                                    <param id="1" name="Value">1</param>
+                                <action id="-15" name="Set visible" sid="807789878350251" type="spr_torch_light">
+                                    <param id="0" name="Visibility">1</param>
                                 </action>
-                                <action id="0" name="Call function" sid="496910813936497" type="Function">
-                                    <param id="0" name="Name">&quot;eEvents/Respawn.Add_Event&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;torch_&quot; &amp; spr_torch.UID</param>
+                                <action id="-15" name="Set visible" sid="946697962273851" type="spr_fire">
+                                    <param id="0" name="Visibility">1</param>
                                 </action>
                             </actions>
-                        </event-block>
-                        <event-block sid="521490670602086">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="164372040520925" type="spr_torch">
-                                    <param id="0" name="Instance variable">type</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;timed&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions />
                             <sub-events>
-                                <event-block sid="207331042599624">
+                                <event-block sid="853604448295271">
                                     <conditions>
-                                        <condition id="-14" name="Pick by unique ID" sid="183253757603541" type="obj_timed_torch_handler">
-                                            <param id="0" name="Unique ID">spr_torch.timed_manager_uid</param>
+                                        <condition id="-7" name="Compare instance variable" sid="768995961947821" type="spr_torch">
+                                            <param id="0" name="Instance variable">type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;normal&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="122722391248148" type="spr_torch">
+                                            <param id="0" name="Instance variable">is_lit</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="496910813936497" type="Function">
+                                            <param id="0" name="Name">&quot;eEvents/Respawn.Add_Event&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;torch_&quot; &amp; spr_torch.UID</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="493738788304959">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="596736321893468" type="spr_torch">
+                                            <param id="0" name="Instance variable">type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;long_distance&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="654632094863761" type="spr_torch">
+                                            <param id="0" name="Instance variable">is_lit</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="238832610539687" type="Function">
+                                            <param id="0" name="Name">&quot;eEvents/Respawn.Add_Event&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;torch_&quot; &amp; spr_torch.UID</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="827225109383560" type="Function">
+                                            <param id="0" name="Name">&quot;eTorches.Light_Torch&quot;</param>
+                                            <param id="1" name="Parameter {n}">spr_torch.long_distance_uid</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="521490670602086">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="164372040520925" type="spr_torch">
+                                            <param id="0" name="Instance variable">type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;timed&quot;</param>
                                         </condition>
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="153402071889804">
+                                        <event-block sid="207331042599624">
                                             <conditions>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="918986008772578" type="obj_timed_torch_handler">
-                                                    <param id="0" name="Instance variable">has_started_timer</param>
+                                                <condition id="-14" name="Pick by unique ID" sid="183253757603541" type="obj_timed_torch_handler">
+                                                    <param id="0" name="Unique ID">spr_torch.timed_manager_uid</param>
                                                 </condition>
                                             </conditions>
-                                            <actions>
-                                                <action id="-13" name="Set boolean" sid="204659014891861" type="obj_timed_torch_handler">
-                                                    <param id="0" name="Instance variable">has_started_timer</param>
-                                                    <param id="1" name="Value">1</param>
-                                                </action>
-                                                <action behavior="Timer" id="0" name="Start timer" sid="427751542153819" type="obj_timed_torch_handler">
-                                                    <param id="0" name="Duration">Self.time_to_light</param>
-                                                    <param id="1" name="Type">0</param>
-                                                    <param id="2" name="Tag">&quot;light&quot;</param>
-                                                </action>
-                                            </actions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="153402071889804">
+                                                    <conditions>
+                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="918986008772578" type="obj_timed_torch_handler">
+                                                            <param id="0" name="Instance variable">has_started_timer</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-13" name="Set boolean" sid="204659014891861" type="obj_timed_torch_handler">
+                                                            <param id="0" name="Instance variable">has_started_timer</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action behavior="Timer" id="0" name="Start timer" sid="427751542153819" type="obj_timed_torch_handler">
+                                                            <param id="0" name="Duration">Self.time_to_light</param>
+                                                            <param id="1" name="Type">0</param>
+                                                            <param id="2" name="Tag">&quot;light&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>

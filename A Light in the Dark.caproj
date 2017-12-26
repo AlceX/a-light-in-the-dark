@@ -141,9 +141,10 @@
             <object-type name="spr_torch" sid="603674886976979">
                 <plugin id="Sprite" />
                 <instance-variables>
-                    <instance-variable comment='&quot;normal&quot;, &quot;timed&quot;' name="type" sid="710368218694502" type="string" />
+                    <instance-variable comment='&quot;normal&quot;, &quot;timed&quot;, &quot;long_distance&quot;' name="type" sid="710368218694502" type="string" />
                     <instance-variable name="is_lit" sid="801355046223489" type="boolean" />
                     <instance-variable name="timed_manager_uid" sid="740478820180350" type="number" />
+                    <instance-variable name="long_distance_uid" sid="726686747767041" type="number" />
                 </instance-variables>
                 <container>
                     <type>spr_torch</type>

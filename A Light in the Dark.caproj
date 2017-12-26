@@ -167,7 +167,21 @@
                         </frame>
                     </animation>
                     <animation framecount="1" loop="0" name="long_distance" pingpong="0" repeatcount="1" repeatto="0" sid="985196410960241" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\roguelike-pack\long_distance_torch.png">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.961538" original-source="C:\Users\gamedev\Desktop\ALITD\art\roguelike-pack\long_distance_torch.png">
+                            <collision-poly>
+                                <point x="0.181818" y="0.153846" />
+                                <point x="0.5" y="0.0769231" />
+                                <point x="0.818182" y="0.153846" />
+                                <point x="0.909091" y="0.5" />
+                                <point x="0.863636" y="0.884615" />
+                                <point x="0.5" y="0.923077" />
+                                <point x="0.136364" y="0.884615" />
+                                <point x="0.0909091" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="timed" pingpong="0" repeatcount="1" repeatto="0" sid="245963280270212" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.961538" original-source="C:\Users\gamedev\Desktop\ALITD\art\roguelike-pack\timed_torch.png">
                             <collision-poly>
                                 <point x="0.181818" y="0.153846" />
                                 <point x="0.5" y="0.0769231" />

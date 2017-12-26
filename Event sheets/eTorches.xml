@@ -93,6 +93,10 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="4" name="Set animation" sid="271576559336416" type="spr_torch">
+                                    <param id="0" name="Animation">&quot;timed&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
                                 <action id="-16" name="Set opacity" sid="439279953824657" type="spr_torch_light">
                                     <param id="0" name="Opacity">50</param>
                                 </action>

@@ -60,6 +60,30 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
+                        <event-block sid="685647536572000">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="798037588466128" type="spr_torch">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;long_distance&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="498162747849453" type="spr_torch">
+                                    <param id="0" name="Animation">&quot;long_distance&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="774024152904044" type="spr_torch">
+                                    <param id="0" name="Scale">1.5</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="530042048266643" type="spr_fire">
+                                    <param id="0" name="Scale">1.5</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="214161556857232" type="spr_torch_light">
+                                    <param id="0" name="Scale">1.5</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="965144510836147">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="546158243242049" type="spr_torch">

@@ -223,6 +223,10 @@
                                                             <param id="1" name="Type">0</param>
                                                             <param id="2" name="Tag">&quot;light&quot;</param>
                                                         </action>
+                                                        <action id="0" name="Call function" sid="290164822220379" type="Function">
+                                                            <param id="0" name="Name">&quot;eTorches/TimedTorches.start_flashing&quot;</param>
+                                                            <param id="1" name="Parameter {n}">obj_timed_torch_handler.UID</param>
+                                                        </action>
                                                     </actions>
                                                 </event-block>
                                             </sub-events>
@@ -330,6 +334,7 @@
                                                     <param id="0" name="Instance variable">is_lit</param>
                                                     <param id="1" name="Value">1</param>
                                                 </action>
+                                                <action behavior="Flash" id="1" name="Stop flashing" sid="454692011955238" type="spr_torch" />
                                             </actions>
                                         </event-block>
                                         <event-block sid="132255304633026">
@@ -385,6 +390,71 @@
                             </sub-events>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="499990298618532">
+                    <conditions>
+                        <condition id="0" name="On function" sid="637606162364150" type="Function">
+                            <param id="0" name="Name">&quot;eTorches/TimedTorches.start_flashing&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="206445683720842">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="652812188545640" type="obj_timed_torch_handler">
+                                    <param id="0" name="Unique ID">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="512113655268466">
+                                    <conditions>
+                                        <condition id="-10" name="For" sid="145202226330953" type="System">
+                                            <param id="0" name="Name">&quot;&quot;</param>
+                                            <param id="1" name="Start index">0</param>
+                                            <param id="2" name="End index">tokencount(obj_timed_torch_handler.torch_uids, &quot;|&quot;) - 1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="726913976664998">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="642911392664614" type="spr_torch">
+                                                    <param id="0" name="Unique ID">int(tokenat(obj_timed_torch_handler.torch_uids, loopindex, &quot;|&quot;))</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Flash" id="0" name="Flash" sid="408937896016015" type="spr_torch">
+                                                    <param id="0" name="&apos;On&apos; time">0.3</param>
+                                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                                    <param id="2" name="Duration">obj_timed_torch_handler.time_to_light - 1</param>
+                                                </action>
+                                                <action behavior="Timer" id="0" name="Start timer" sid="104747661445900" type="spr_torch">
+                                                    <param id="0" name="Duration">obj_timed_torch_handler.time_to_light - 1</param>
+                                                    <param id="1" name="Type">0</param>
+                                                    <param id="2" name="Tag">&quot;quick_flash&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="101872970877051">
+                    <conditions>
+                        <condition behavior="Timer" id="0" name="On timer" sid="888310482962291" type="spr_torch">
+                            <param id="0" name="Tag">&quot;quick_flash&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="532566834422421" type="spr_torch">
+                            <param id="0" name="&apos;On&apos; time">0.08</param>
+                            <param id="1" name="&apos;Off&apos; time">0.08</param>
+                            <param id="2" name="Duration">1</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>

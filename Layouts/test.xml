@@ -155,6 +155,10 @@
                         <timed_manager_uid>0</timed_manager_uid>
                         <long_distance_uid>0</long_distance_uid>
                     </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                        <behavior-instance type="Timer" />
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -205,6 +209,10 @@
                         <timed_manager_uid>39</timed_manager_uid>
                         <long_distance_uid>0</long_distance_uid>
                     </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                        <behavior-instance type="Timer" />
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -233,6 +241,10 @@
                         <timed_manager_uid>39</timed_manager_uid>
                         <long_distance_uid>0</long_distance_uid>
                     </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                        <behavior-instance type="Timer" />
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>

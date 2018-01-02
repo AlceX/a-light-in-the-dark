@@ -18,6 +18,7 @@
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
@@ -146,6 +147,14 @@
                     <instance-variable name="timed_manager_uid" sid="740478820180350" type="number" />
                     <instance-variable name="long_distance_uid" sid="726686747767041" type="number" />
                 </instance-variables>
+                <behaviors>
+                    <behavior-type name="Flash" sid="888281919894813">
+                        <behavior id="Flash" />
+                    </behavior-type>
+                    <behavior-type name="Timer" sid="871393462929037">
+                        <behavior id="Timer" />
+                    </behavior-type>
+                </behaviors>
                 <container>
                     <type>spr_torch</type>
                     <type>spr_fire</type>

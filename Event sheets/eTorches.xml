@@ -52,9 +52,11 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Call function" sid="263763455228517" type="Function">
-                                            <param id="0" name="Name">&quot;eTorches.Light_Torch&quot;</param>
-                                            <param id="1" name="Parameter {n}">spr_torch.UID</param>
+                                        <action id="-15" name="Set visible" sid="710681928237465" type="spr_torch_light">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="137813391040945" type="spr_fire">
+                                            <param id="0" name="Visibility">1</param>
                                         </action>
                                     </actions>
                                 </event-block>

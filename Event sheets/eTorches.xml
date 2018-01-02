@@ -326,6 +326,10 @@
                                                 <action id="9" name="Set scale" sid="500121464394464" type="spr_fire">
                                                     <param id="0" name="Scale">1</param>
                                                 </action>
+                                                <action id="-13" name="Set boolean" sid="816173539815450" type="spr_torch">
+                                                    <param id="0" name="Instance variable">is_lit</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
                                             </actions>
                                         </event-block>
                                         <event-block sid="132255304633026">

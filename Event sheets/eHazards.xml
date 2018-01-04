@@ -57,12 +57,50 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <comment>Destroy bullet if it leaves the sector it was spawned in.</comment>
+                <comment>Used to have an &quot;or&quot; block but that seems to pick all spr_bullet instances, so changed it to this. Could use a &quot;For each&quot; probably, but I guess this looks nicer.</comment>
                 <event-block sid="479268070248823">
                     <conditions>
-                        <condition id="-3" inverted="1" name="Is on-screen" sid="237734657908308" type="spr_bullet" />
+                        <condition id="-1" name="Compare X" sid="583946643921871" type="spr_bullet">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">OriginalWindowWidth * Self.x_sector</param>
+                        </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="542995011975942" type="spr_bullet" />
+                        <action id="-9" name="Destroy" sid="564062174598272" type="spr_bullet" />
+                    </actions>
+                </event-block>
+                <event-block sid="514286737643552">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="322923241411554" type="spr_bullet">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">OriginalWindowWidth * (Self.x_sector + 1)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="982780763350300" type="spr_bullet" />
+                    </actions>
+                </event-block>
+                <event-block sid="641335570264556">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="635690640323748" type="spr_bullet">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Y co-ordinate">OriginalWindowHeight * Self.y_sector</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="910383258597089" type="spr_bullet" />
+                    </actions>
+                </event-block>
+                <event-block sid="717379156465454">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="184875469782250" type="spr_bullet">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Y co-ordinate">OriginalWindowHeight * (Self.y_sector + 1)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="594543569666310" type="spr_bullet" />
                     </actions>
                 </event-block>
                 <event-block sid="260378078563796">
@@ -101,6 +139,14 @@
                                 <action id="-24" name="Move to top" sid="355084803352958" type="spr_bullet" />
                                 <action behavior="Bullet" id="3" name="Set angle of motion" sid="749720740186823" type="spr_bullet">
                                     <param id="0" name="Angle">spr_turret.Angle</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="778487077000953" type="spr_bullet">
+                                    <param id="0" name="Instance variable">x_sector</param>
+                                    <param id="1" name="Value">floor(Self.X / OriginalWindowWidth)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="665421603919579" type="spr_bullet">
+                                    <param id="0" name="Instance variable">y_sector</param>
+                                    <param id="1" name="Value">floor(Self.Y / OriginalWindowHeight)</param>
                                 </action>
                             </actions>
                         </event-block>

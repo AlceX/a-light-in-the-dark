@@ -318,6 +318,10 @@
             </object-type>
             <object-type name="spr_bullet" sid="124762143019129">
                 <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable comment="X grid sector this bullet spawned in." name="x_sector" sid="305277392113486" type="number" />
+                    <instance-variable comment="Y grid sector it spawned in." name="y_sector" sid="282194892277594" type="number" />
+                </instance-variables>
                 <behaviors>
                     <behavior-type name="Bullet" sid="720602102725184">
                         <behavior id="Bullet" />

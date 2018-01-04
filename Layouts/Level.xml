@@ -91,6 +91,7 @@
                         <has_light>false</has_light>
                         <room_start_x>0</room_start_x>
                         <room_start_y>0</room_start_y>
+                        <state>light</state>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">

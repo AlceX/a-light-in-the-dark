@@ -11,15 +11,21 @@
                 <action id="-15" name="Set visible" sid="120642228177352" type="obj_player">
                     <param id="0" name="Visibility">0</param>
                 </action>
+                <action behavior="8Direction" id="2" name="Set ignoring input" sid="254444102275221" type="obj_boomerang">
+                    <param id="0" name="Input">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="669849021827494" type="obj_boomerang">
+                    <param id="0" name="Visibility">0</param>
+                </action>
                 <action id="-26" name="Move to layer" sid="619250286697482" type="spr_player_light">
                     <param id="0" name="Layer">&quot;black&quot;</param>
                 </action>
             </actions>
         </event-block>
         <comment>Smart way to handle animations from stemkoski: &#x0D;&#x0A;https://www.scirra.com/tutorials/1117/animation-management-in-8-direction-games</comment>
-        <event-block sid="216423433043373">
+        <event-block sid="681483244192499">
             <conditions>
-                <condition id="-1" name="Every tick" sid="612996119058317" type="System" />
+                <condition id="-1" name="Every tick" sid="946127081495642" type="System" />
             </conditions>
             <actions>
                 <action id="-4" name="Set position to another object" sid="602098794774577" type="spr_player">
@@ -31,31 +37,35 @@
                     <param id="1" name="From">1</param>
                 </action>
             </actions>
-        </event-block>
-        <event-block sid="825419148168589">
-            <conditions>
-                <condition behavior="8Direction" id="0" name="Is moving" sid="667284287580731" type="obj_player" />
-            </conditions>
-            <actions>
-                <action id="6" name="Set speed" sid="298381236814094" type="spr_player">
-                    <param id="0" name="Speed">round(lerp(3, 10, unlerp(0, obj_player.8Direction.MaxSpeed, abs(obj_player.8Direction.Speed))))</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="155229358697403">
-            <conditions>
-                <condition id="-22" name="Else" sid="908796207361651" type="System" />
-            </conditions>
-            <actions>
-                <action id="5" name="Set frame" sid="576547496491935" type="spr_player">
-                    <param id="0" name="Frame number">1</param>
-                </action>
-            </actions>
+            <sub-events>
+                <event-block sid="825419148168589">
+                    <conditions>
+                        <condition behavior="8Direction" id="0" name="Is moving" sid="667284287580731" type="obj_player" />
+                    </conditions>
+                    <actions>
+                        <action id="6" name="Set speed" sid="298381236814094" type="spr_player">
+                            <param id="0" name="Speed">round(lerp(3, 10, unlerp(0, obj_player.8Direction.MaxSpeed, abs(obj_player.8Direction.Speed))))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="155229358697403">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="908796207361651" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="576547496491935" type="spr_player">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="472801814043288">
             <conditions>
-                <condition id="-8" name="Is boolean instance variable set" sid="296658104933931" type="obj_player">
-                    <param id="0" name="Instance variable">has_light</param>
+                <condition id="-7" name="Compare instance variable" sid="683827748743732" type="obj_player">
+                    <param id="0" name="Instance variable">state</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;light&quot;</param>
                 </condition>
             </conditions>
             <actions>
@@ -78,6 +88,83 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="301827676335177">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="493873737764856" type="Keyboard">
+                            <param id="0" name="Key">32</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="573118360567500" type="Function">
+                            <param id="0" name="Name">&quot;ePlayer.throw_boomerang&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="349340268609561">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="745766054434253" type="obj_player">
+                    <param id="0" name="Instance variable">state</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;boomerang&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="749522482791684" type="spr_boomerang">
+                    <param id="0" name="Object">obj_boomerang</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+                <action id="-4" name="Set position to another object" sid="909020147038243" type="spr_player_light">
+                    <param id="0" name="Object">obj_boomerang</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="825851594770991">
+                    <conditions>
+                        <condition behavior="8Direction" id="1" name="Compare speed" sid="269122139504859" type="obj_boomerang">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Speed">200</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="3" name="Set speed" sid="364335280278536" type="obj_boomerang">
+                            <param id="0" name="Speed">Self.8Direction.Speed + 200 * dt</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Boomerang needs to get off player before the player can grab it again.</comment>
+                <event-block sid="106417130350257">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="774718141185803" type="obj_boomerang">
+                            <param id="0" name="Object">obj_player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="730449153543595" type="obj_boomerang">
+                            <param id="0" name="Instance variable">can_return_to_player</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="258451236423050">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="405174544807463" type="obj_boomerang">
+                            <param id="0" name="Object">obj_player</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="786683946590872" type="obj_boomerang">
+                            <param id="0" name="Instance variable">can_return_to_player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="248101604178555" type="Function">
+                            <param id="0" name="Name">&quot;ePlayer.grab_boomerang&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-block>
         <comment>Called from eHazards/Turrets.</comment>
@@ -89,12 +176,198 @@
             </conditions>
             <actions />
             <sub-events>
+                <comment>This gets a lot more messy when you consider the boomerang...</comment>
                 <event-block sid="810505496518971">
                     <conditions />
                     <actions>
                         <action id="-3" name="Set position" sid="714627252579139" type="obj_player">
                             <param id="0" name="X">Self.room_start_x</param>
                             <param id="1" name="Y">Self.room_start_y</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="935936935738215">
+            <conditions>
+                <condition id="0" name="On function" sid="289644387543956" type="Function">
+                    <param id="0" name="Name">&quot;ePlayer.throw_boomerang&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="505667147455559">
+                    <conditions />
+                    <actions>
+                        <action id="0" name="Call function" sid="246242776319132" type="Function">
+                            <param id="0" name="Name">&quot;ePlayer.set_boomerang_dir&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action behavior="8Direction" id="0" name="Stop" sid="935341186811806" type="obj_player" />
+                        <action behavior="8Direction" id="2" name="Set ignoring input" sid="789632567447252" type="obj_player">
+                            <param id="0" name="Input">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="618786121275907" type="obj_player">
+                            <param id="0" name="Instance variable">state</param>
+                            <param id="1" name="Value">&quot;boomerang&quot;</param>
+                        </action>
+                        <action behavior="8Direction" id="2" name="Set ignoring input" sid="217087777191141" type="obj_boomerang">
+                            <param id="0" name="Input">0</param>
+                        </action>
+                        <action behavior="8Direction" id="3" name="Set speed" sid="405001317996866" type="obj_boomerang">
+                            <param id="0" name="Speed">100</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="360920660870582" type="obj_boomerang">
+                            <param id="0" name="Instance variable">can_return_to_player</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="377811965321260" type="obj_boomerang">
+                            <param id="0" name="Object">obj_player</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="400692197445963" type="spr_boomerang">
+                            <param id="0" name="Object">obj_boomerang</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="495698583888675" type="spr_boomerang">
+                            <param id="0" name="Angle">obj_player.Angle</param>
+                        </action>
+                        <action behavior="Solid" id="0" name="Set enabled" sid="421696925991999" type="tm_collision">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="302168286344732">
+            <conditions>
+                <condition id="0" name="On function" sid="430604297593405" type="Function">
+                    <param id="0" name="Name">&quot;ePlayer.set_boomerang_dir&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="853998748541929">
+                    <conditions>
+                        <condition behavior="8Direction" id="0" name="Is moving" sid="682484855918334" type="obj_player" />
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="9" name="Set vector X" sid="313937674642174" type="obj_boomerang">
+                            <param id="0" name="Vector X">obj_player.8Direction.VectorX</param>
+                        </action>
+                        <action behavior="8Direction" id="10" name="Set vector Y" sid="299048101363191" type="obj_boomerang">
+                            <param id="0" name="Vector Y">obj_player.8Direction.VectorY</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="999038600358272">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="216564816334566" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="334952933041337">
+                            <conditions>
+                                <condition id="-13" name="Is between angles" sid="514365075944334" type="obj_player">
+                                    <param id="0" name="First angle">-1</param>
+                                    <param id="1" name="Second angle">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="9" name="Set vector X" sid="779602184678379" type="obj_boomerang">
+                                    <param id="0" name="Vector X">100</param>
+                                </action>
+                                <action behavior="8Direction" id="10" name="Set vector Y" sid="716325631109152" type="obj_boomerang">
+                                    <param id="0" name="Vector Y">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="614889776075035">
+                            <conditions>
+                                <condition id="-13" name="Is between angles" sid="591192407908608" type="obj_player">
+                                    <param id="0" name="First angle">89</param>
+                                    <param id="1" name="Second angle">91</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="9" name="Set vector X" sid="734302933599739" type="obj_boomerang">
+                                    <param id="0" name="Vector X">0</param>
+                                </action>
+                                <action behavior="8Direction" id="10" name="Set vector Y" sid="201288154619783" type="obj_boomerang">
+                                    <param id="0" name="Vector Y">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="431612901508184">
+                            <conditions>
+                                <condition id="-13" name="Is between angles" sid="552928521749834" type="obj_player">
+                                    <param id="0" name="First angle">179</param>
+                                    <param id="1" name="Second angle">181</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="9" name="Set vector X" sid="579911223021791" type="obj_boomerang">
+                                    <param id="0" name="Vector X">-100</param>
+                                </action>
+                                <action behavior="8Direction" id="10" name="Set vector Y" sid="594626379062726" type="obj_boomerang">
+                                    <param id="0" name="Vector Y">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="680655076704674">
+                            <conditions>
+                                <condition id="-13" name="Is between angles" sid="666327673791803" type="obj_player">
+                                    <param id="0" name="First angle">269</param>
+                                    <param id="1" name="Second angle">271</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="9" name="Set vector X" sid="371539394456224" type="obj_boomerang">
+                                    <param id="0" name="Vector X">0</param>
+                                </action>
+                                <action behavior="8Direction" id="10" name="Set vector Y" sid="583859163706475" type="obj_boomerang">
+                                    <param id="0" name="Vector Y">-100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="616147453295050">
+            <conditions>
+                <condition id="0" name="On function" sid="405315453813143" type="Function">
+                    <param id="0" name="Name">&quot;ePlayer.grab_boomerang&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="164928953954744">
+                    <conditions />
+                    <actions>
+                        <action behavior="8Direction" id="2" name="Set ignoring input" sid="443838849528847" type="obj_player">
+                            <param id="0" name="Input">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="468512402527294" type="obj_player">
+                            <param id="0" name="Instance variable">state</param>
+                            <param id="1" name="Value">&quot;light&quot;</param>
+                        </action>
+                        <action behavior="8Direction" id="2" name="Set ignoring input" sid="592313311959315" type="obj_boomerang">
+                            <param id="0" name="Input">1</param>
+                        </action>
+                        <action behavior="8Direction" id="3" name="Set speed" sid="397659130170612" type="obj_boomerang">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="223813669670422" type="obj_boomerang">
+                            <param id="0" name="X">-100</param>
+                            <param id="1" name="Y">-100</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="257880358269885" type="spr_boomerang">
+                            <param id="0" name="X">-100</param>
+                            <param id="1" name="Y">-100</param>
+                        </action>
+                        <action behavior="Solid" id="0" name="Set enabled" sid="822033965154244" type="tm_collision">
+                            <param id="0" name="State">1</param>
                         </action>
                     </actions>
                 </event-block>

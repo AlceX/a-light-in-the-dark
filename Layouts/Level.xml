@@ -1001,6 +1001,7 @@
                         <torch_uids>43|44|45</torch_uids>
                         <time_to_light>3</time_to_light>
                         <has_started_timer>false</has_started_timer>
+                        <completed>false</completed>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Timer" />
@@ -1346,6 +1347,7 @@
                         <torch_uids>50|51</torch_uids>
                         <time_to_light>2.5</time_to_light>
                         <has_started_timer>false</has_started_timer>
+                        <completed>false</completed>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Timer" />

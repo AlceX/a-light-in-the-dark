@@ -275,6 +275,7 @@
                         <torch_uids>9|10</torch_uids>
                         <time_to_light>3</time_to_light>
                         <has_started_timer>false</has_started_timer>
+                        <completed>false</completed>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Timer" />

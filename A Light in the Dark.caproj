@@ -291,6 +291,7 @@
                     <instance-variable comment='List with separator &quot;|&quot;.' name="torch_uids" sid="298741345861606" type="string" />
                     <instance-variable name="time_to_light" sid="363091769723816" type="number" />
                     <instance-variable name="has_started_timer" sid="381549791781444" type="boolean" />
+                    <instance-variable comment="Set to true when all torches have been sucessfully lit." name="completed" sid="794468509143736" type="boolean" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="Timer" sid="284691649962899">

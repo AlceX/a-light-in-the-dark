@@ -153,6 +153,7 @@
                     <instance-variables>
                         <type>normal</type>
                         <is_lit>false</is_lit>
+                        <half_lit>false</half_lit>
                         <timed_manager_uid>0</timed_manager_uid>
                         <long_distance_uid>0</long_distance_uid>
                     </instance-variables>
@@ -207,6 +208,7 @@
                     <instance-variables>
                         <type>timed</type>
                         <is_lit>false</is_lit>
+                        <half_lit>false</half_lit>
                         <timed_manager_uid>39</timed_manager_uid>
                         <long_distance_uid>0</long_distance_uid>
                     </instance-variables>
@@ -239,6 +241,7 @@
                     <instance-variables>
                         <type>timed</type>
                         <is_lit>false</is_lit>
+                        <half_lit>false</half_lit>
                         <timed_manager_uid>39</timed_manager_uid>
                         <long_distance_uid>0</long_distance_uid>
                     </instance-variables>

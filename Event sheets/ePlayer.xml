@@ -135,6 +135,19 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="572592882453641">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="597290810059175" type="obj_boomerang">
+                            <param id="0" name="Object">spr_torch</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="770465683118371" type="Function">
+                            <param id="0" name="Name">&quot;eTorches.Boomerang_Touch_Torch&quot;</param>
+                            <param id="1" name="Parameter {n}">spr_torch.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <comment>Boomerang needs to get off player before the player can grab it again.</comment>
                 <event-block sid="106417130350257">
                     <conditions>
@@ -161,6 +174,10 @@
                     <actions>
                         <action id="0" name="Call function" sid="248101604178555" type="Function">
                             <param id="0" name="Name">&quot;ePlayer.grab_boomerang&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="321505534228545" type="Function">
+                            <param id="0" name="Name">&quot;eTorches.Light_Half_Lit_Torches&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>

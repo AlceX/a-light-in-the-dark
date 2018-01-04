@@ -132,6 +132,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <comment>Why check if it&apos;s lit inside the function? To make sure the long_distance self-call doesn&apos;t get stuck in an infinite loop.</comment>
                         <event-block sid="696203897464312">
                             <conditions>
                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="557148427583896" type="spr_torch">
@@ -232,6 +233,165 @@
                                             </sub-events>
                                         </event-block>
                                     </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Called from ePlayer.</comment>
+        <event-block sid="138229804620212">
+            <conditions>
+                <condition id="0" name="On function" sid="451212638054809" type="Function">
+                    <param id="0" name="Name">&quot;eTorches.Boomerang_Touch_Torch&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>0 - UID of the torch</comment>
+                <event-block sid="872547359094433">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="611391753434837" type="spr_torch">
+                            <param id="0" name="Unique ID">Function.Param(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="723886251300136">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="543482032086931" type="spr_torch">
+                                    <param id="0" name="Instance variable">half_lit</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="980626747371760" type="spr_torch">
+                                    <param id="0" name="Instance variable">half_lit</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="851781682875275" type="spr_torch_light">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="733774393041911" type="spr_fire">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="623466556692410">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="337197431507094" type="spr_torch">
+                                            <param id="0" name="Instance variable">type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;normal&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="511990340305996" type="spr_torch_light">
+                                            <param id="0" name="Opacity">50</param>
+                                        </action>
+                                        <action id="9" name="Set scale" sid="723282630386991" type="spr_torch_light">
+                                            <param id="0" name="Scale">0.5</param>
+                                        </action>
+                                        <action id="9" name="Set scale" sid="800975353430560" type="spr_fire">
+                                            <param id="0" name="Scale">0.5</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="892988685202690">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="499180754593171" type="spr_torch">
+                                            <param id="0" name="Instance variable">type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;long_distance&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="217528437324307" type="spr_torch_light">
+                                            <param id="0" name="Opacity">50</param>
+                                        </action>
+                                        <action id="9" name="Set scale" sid="795522562664126" type="spr_torch_light">
+                                            <param id="0" name="Scale">1</param>
+                                        </action>
+                                        <action id="9" name="Set scale" sid="805628503766593" type="spr_fire">
+                                            <param id="0" name="Scale">1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="142283931702999" type="Function">
+                                            <param id="0" name="Name">&quot;eTorches.Boomerang_Touch_Torch&quot;</param>
+                                            <param id="1" name="Parameter {n}">spr_torch.long_distance_uid</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="651000970107292">
+            <conditions>
+                <condition id="0" name="On function" sid="268127217199170" type="Function">
+                    <param id="0" name="Name">&quot;eTorches.Light_Half_Lit_Torches&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="499715999018292">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="885872544115162" type="System">
+                            <param id="0" name="Object">spr_torch</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="826954173904789">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="697751182183380" type="spr_torch">
+                                    <param id="0" name="Instance variable">half_lit</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="772667437969358" type="spr_torch">
+                                    <param id="0" name="Instance variable">is_lit</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="197762396916313" type="spr_torch_light">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="448141568758601">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="781801753248795" type="spr_torch">
+                                            <param id="0" name="Instance variable">type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;normal&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="9" name="Set scale" sid="326692258766731" type="spr_torch_light">
+                                            <param id="0" name="Scale">1</param>
+                                        </action>
+                                        <action id="9" name="Set scale" sid="138198415984227" type="spr_fire">
+                                            <param id="0" name="Scale">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="937866054220664">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="133894770688921" type="spr_torch">
+                                            <param id="0" name="Instance variable">type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;long_distance&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="9" name="Set scale" sid="985476831699626" type="spr_torch_light">
+                                            <param id="0" name="Scale">1.5</param>
+                                        </action>
+                                        <action id="9" name="Set scale" sid="994712034250326" type="spr_fire">
+                                            <param id="0" name="Scale">1.5</param>
+                                        </action>
+                                    </actions>
                                 </event-block>
                             </sub-events>
                         </event-block>

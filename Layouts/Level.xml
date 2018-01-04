@@ -96,8 +96,8 @@
                         <behavior-instance type="8Direction">
                             <properties>
                                 <max-speed>250</max-speed>
-                                <acceleration>600</acceleration>
-                                <deceleration>650</deceleration>
+                                <acceleration>550</acceleration>
+                                <deceleration>1000</deceleration>
                                 <directions>8 directions</directions>
                                 <set-angle>90-degree intervals</set-angle>
                                 <default-controls>Yes</default-controls>

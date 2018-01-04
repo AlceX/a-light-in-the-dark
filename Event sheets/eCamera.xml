@@ -3,76 +3,160 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>eCamera</name>
     <events>
-        <event-block sid="976025902502800">
+        <event-block sid="892121975892978">
             <conditions>
-                <condition id="-3" inverted="1" name="Is on-screen" sid="686712580132126" type="obj_player" />
+                <condition id="-7" name="Compare instance variable" sid="251310560016182" type="obj_player">
+                    <param id="0" name="Instance variable">state</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;light&quot;</param>
+                </condition>
             </conditions>
-            <actions>
-                <action id="-10" name="Set value" sid="305397185978432" type="obj_player">
-                    <param id="0" name="Instance variable">room_start_x</param>
-                    <param id="1" name="Value">Self.X</param>
-                </action>
-                <action id="-10" name="Set value" sid="150358900915761" type="obj_player">
-                    <param id="0" name="Instance variable">room_start_y</param>
-                    <param id="1" name="Value">Self.Y</param>
-                </action>
-                <action id="0" name="Call function" sid="288591811601586" type="Function">
-                    <param id="0" name="Name">&quot;eEvents/Respawn.Clear_Events&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
-                </action>
-            </actions>
+            <actions />
             <sub-events>
-                <event-block sid="196607442329962">
+                <event-block sid="976025902502800">
                     <conditions>
-                        <condition id="-1" name="Compare X" sid="308358127414885" type="obj_player">
-                            <param id="0" name="Comparison">4</param>
-                            <param id="1" name="X co-ordinate">ViewportRight(0)</param>
-                        </condition>
+                        <condition id="-3" inverted="1" name="Is on-screen" sid="686712580132126" type="obj_player" />
                     </conditions>
                     <actions>
-                        <action id="-5" name="Scroll to X" sid="205145622990032" type="System">
-                            <param id="0" name="X">scrollx + OriginalWindowWidth</param>
+                        <action id="-10" name="Set value" sid="305397185978432" type="obj_player">
+                            <param id="0" name="Instance variable">room_start_x</param>
+                            <param id="1" name="Value">Self.X</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="150358900915761" type="obj_player">
+                            <param id="0" name="Instance variable">room_start_y</param>
+                            <param id="1" name="Value">Self.Y</param>
+                        </action>
+                        <action id="0" name="Call function" sid="288591811601586" type="Function">
+                            <param id="0" name="Name">&quot;eEvents/Respawn.Clear_Events&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="196607442329962">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="308358127414885" type="obj_player">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">ViewportRight(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Scroll to X" sid="205145622990032" type="System">
+                                    <param id="0" name="X">scrollx + OriginalWindowWidth</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="631396384437244">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="850044330638053" type="obj_player">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">ViewportLeft(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Scroll to X" sid="179143100260335" type="System">
+                                    <param id="0" name="X">scrollx - OriginalWindowWidth</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="352176231002513">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="719309983830635" type="obj_player">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="Y co-ordinate">ViewportTop(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-6" name="Scroll to Y" sid="110154581508226" type="System">
+                                    <param id="0" name="Y">scrolly - OriginalWindowHeight</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="874438268751033">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="442453876851663" type="obj_player">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="Y co-ordinate">ViewportBottom(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-6" name="Scroll to Y" sid="201995214365371" type="System">
+                                    <param id="0" name="Y">scrolly + OriginalWindowHeight</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
-                <event-block sid="631396384437244">
+            </sub-events>
+        </event-block>
+        <event-block sid="948405725545363">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="570107867454317" type="obj_player">
+                    <param id="0" name="Instance variable">state</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;boomerang&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="551353115024396">
                     <conditions>
-                        <condition id="-1" name="Compare X" sid="850044330638053" type="obj_player">
-                            <param id="0" name="Comparison">2</param>
-                            <param id="1" name="X co-ordinate">ViewportLeft(0)</param>
-                        </condition>
+                        <condition id="-3" inverted="1" name="Is on-screen" sid="673110082685808" type="obj_boomerang" />
                     </conditions>
-                    <actions>
-                        <action id="-5" name="Scroll to X" sid="179143100260335" type="System">
-                            <param id="0" name="X">scrollx - OriginalWindowWidth</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="352176231002513">
-                    <conditions>
-                        <condition id="-2" name="Compare Y" sid="719309983830635" type="obj_player">
-                            <param id="0" name="Comparison">2</param>
-                            <param id="1" name="Y co-ordinate">ViewportTop(0)</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-6" name="Scroll to Y" sid="110154581508226" type="System">
-                            <param id="0" name="Y">scrolly - OriginalWindowHeight</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="874438268751033">
-                    <conditions>
-                        <condition id="-2" name="Compare Y" sid="442453876851663" type="obj_player">
-                            <param id="0" name="Comparison">4</param>
-                            <param id="1" name="Y co-ordinate">ViewportBottom(0)</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-6" name="Scroll to Y" sid="201995214365371" type="System">
-                            <param id="0" name="Y">scrolly + OriginalWindowHeight</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="189290205053032">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="625654534695285" type="obj_boomerang">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">ViewportRight(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Scroll to X" sid="486322180044797" type="System">
+                                    <param id="0" name="X">scrollx + OriginalWindowWidth</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="966640648587906">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="470810505789323" type="obj_boomerang">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">ViewportLeft(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Scroll to X" sid="983224800606652" type="System">
+                                    <param id="0" name="X">scrollx - OriginalWindowWidth</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="343155465834854">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="321375418399313" type="obj_boomerang">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="Y co-ordinate">ViewportTop(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-6" name="Scroll to Y" sid="262776966318432" type="System">
+                                    <param id="0" name="Y">scrolly - OriginalWindowHeight</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="582880078363617">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="424711386825860" type="obj_boomerang">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="Y co-ordinate">ViewportBottom(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-6" name="Scroll to Y" sid="603912851300654" type="System">
+                                    <param id="0" name="Y">scrolly + OriginalWindowHeight</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-block>

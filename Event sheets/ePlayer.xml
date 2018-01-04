@@ -254,6 +254,18 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="589542175538640">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="713504927718148" type="spr_bridge">
+                            <param id="0" name="Instance variable">Is_Enabled</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Solid" id="0" name="Set enabled" sid="281608747717385" type="spr_bridge">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-block>
         <event-block sid="302168286344732">
@@ -384,6 +396,18 @@
                             <param id="1" name="Y">-100</param>
                         </action>
                         <action behavior="Solid" id="0" name="Set enabled" sid="822033965154244" type="tm_collision">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="614613790438631">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="157836564430218" type="spr_bridge">
+                            <param id="0" name="Instance variable">Is_Enabled</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Solid" id="0" name="Set enabled" sid="914856558004700" type="spr_bridge">
                             <param id="0" name="State">1</param>
                         </action>
                     </actions>

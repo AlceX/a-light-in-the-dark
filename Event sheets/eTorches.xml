@@ -448,13 +448,23 @@
                             <param id="0" name="Tag">&quot;quick_flash&quot;</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action behavior="Flash" id="0" name="Flash" sid="532566834422421" type="spr_torch">
-                            <param id="0" name="&apos;On&apos; time">0.08</param>
-                            <param id="1" name="&apos;Off&apos; time">0.08</param>
-                            <param id="2" name="Duration">1</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="187913857908416">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="488478498200427" type="spr_torch">
+                                    <param id="0" name="Instance variable">is_lit</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Flash" id="0" name="Flash" sid="532566834422421" type="spr_torch">
+                                    <param id="0" name="&apos;On&apos; time">0.08</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.08</param>
+                                    <param id="2" name="Duration">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>

@@ -464,6 +464,9 @@
                                 <condition id="-8" name="Is boolean instance variable set" sid="908253241010298" type="spr_torch">
                                     <param id="0" name="Instance variable">half_lit</param>
                                 </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="335095953172855" type="spr_torch">
+                                    <param id="0" name="Instance variable">is_lit</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="-13" name="Set boolean" sid="631963113749184" type="spr_torch">

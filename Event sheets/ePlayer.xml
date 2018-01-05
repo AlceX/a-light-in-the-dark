@@ -120,6 +120,10 @@
                     <param id="0" name="Object">obj_boomerang</param>
                     <param id="1" name="Image point (optional)">0</param>
                 </action>
+                <action id="-7" name="Set size" sid="176829995777915" type="spr_player_light">
+                    <param id="0" name="Width">Self.Width - obj_boomerang.decay_rate * dt</param>
+                    <param id="1" name="Height">Self.Height - obj_boomerang.decay_rate * dt</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="825851594770991">
@@ -141,12 +145,29 @@
                             <param id="0" name="Object">spr_torch</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="770465683118371" type="Function">
-                            <param id="0" name="Name">&quot;eTorches.Boomerang_Touch_Torch&quot;</param>
-                            <param id="1" name="Parameter {n}">spr_torch.UID</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="517567628914423">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="349550494214231" type="spr_torch">
+                                    <param id="0" name="Instance variable">half_lit</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="617658644435864" type="spr_torch">
+                                    <param id="0" name="Instance variable">is_lit</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="770465683118371" type="Function">
+                                    <param id="0" name="Name">&quot;eTorches.Boomerang_Touch_Torch&quot;</param>
+                                    <param id="1" name="Parameter {n}">spr_torch.UID</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="484127726297528" type="spr_player_light">
+                                    <param id="0" name="Width">Self.Width - obj_boomerang.reduction_per_torch</param>
+                                    <param id="1" name="Height">Self.Height - obj_boomerang.reduction_per_torch</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <comment>Boomerang needs to get off player before the player can grab it again.</comment>
                 <event-block sid="106417130350257">
@@ -178,6 +199,28 @@
                         </action>
                         <action id="0" name="Call function" sid="321505534228545" type="Function">
                             <param id="0" name="Name">&quot;eTorches.Light_Half_Lit_Torches&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="721936041912635">
+                    <conditions>
+                        <condition id="-5" name="Compare width" sid="890232973991340" type="spr_player_light">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Width">5</param>
+                        </condition>
+                        <condition id="-6" name="Compare height" sid="280422641836749" type="spr_player_light">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Height">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="624795248796815" type="Function">
+                            <param id="0" name="Name">&quot;ePlayer.grab_boomerang&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="774175478706069" type="Function">
+                            <param id="0" name="Name">&quot;eTorches.Unlight_Half_Lit_Torches&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
@@ -374,6 +417,10 @@
                 <event-block sid="164928953954744">
                     <conditions />
                     <actions>
+                        <action id="-7" name="Set size" sid="503871158173778" type="spr_player_light">
+                            <param id="0" name="Width">obj_player.light_size</param>
+                            <param id="1" name="Height">obj_player.light_size</param>
+                        </action>
                         <action behavior="8Direction" id="2" name="Set ignoring input" sid="443838849528847" type="obj_player">
                             <param id="0" name="Input">0</param>
                         </action>

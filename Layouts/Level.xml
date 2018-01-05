@@ -92,6 +92,7 @@
                         <room_start_x>0</room_start_x>
                         <room_start_y>0</room_start_y>
                         <state>light</state>
+                        <light_size>150</light_size>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -1376,6 +1377,8 @@
                     </properties>
                     <instance-variables>
                         <can_return_to_player>false</can_return_to_player>
+                        <decay_rate>25</decay_rate>
+                        <reduction_per_torch>25</reduction_per_torch>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">

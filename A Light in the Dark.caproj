@@ -59,6 +59,7 @@
                     <instance-variable name="room_start_x" sid="462728022570745" type="number" />
                     <instance-variable name="room_start_y" sid="933987934723961" type="number" />
                     <instance-variable comment='&quot;no_light&quot;, &quot;light&quot;, &quot;boomerang&quot;' name="state" sid="949421595420359" type="string" />
+                    <instance-variable name="light_size" sid="500165864999458" type="number" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="8Direction" sid="822028737545692">
@@ -127,6 +128,8 @@
                 <plugin id="Sprite" />
                 <instance-variables>
                     <instance-variable name="can_return_to_player" sid="219411216909062" type="boolean" />
+                    <instance-variable comment="Pixels per second." name="decay_rate" sid="606985756095548" type="number" />
+                    <instance-variable comment="Size reduction of light each time boomerang lights something." name="reduction_per_torch" sid="958522705094953" type="number" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="8Direction" sid="683690511862558">

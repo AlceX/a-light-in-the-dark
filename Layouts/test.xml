@@ -92,6 +92,7 @@
                         <room_start_x>0</room_start_x>
                         <room_start_y>0</room_start_y>
                         <state>light</state>
+                        <light_size>150</light_size>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -219,8 +220,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>211</x>
-                        <y>350</y>
+                        <x>148.844909668</x>
+                        <y>358.879119873</y>
                         <z>0</z>
                         <width>20</width>
                         <height>24</height>
@@ -252,8 +253,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>255</x>
-                        <y>263</y>
+                        <x>180.415252686</x>
+                        <y>264.776611328</y>
                         <z>0</z>
                         <width>20</width>
                         <height>24</height>
@@ -304,6 +305,8 @@
                     </properties>
                     <instance-variables>
                         <can_return_to_player>false</can_return_to_player>
+                        <decay_rate>25</decay_rate>
+                        <reduction_per_torch>25</reduction_per_torch>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -321,8 +324,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>521</x>
-                        <y>278</y>
+                        <x>236</x>
+                        <y>-45</y>
                         <z>0</z>
                         <width>35</width>
                         <height>35</height>
@@ -351,14 +354,80 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>339</x>
-                        <y>178</y>
+                        <x>312</x>
+                        <y>-59</y>
                         <z>0</z>
                         <width>37</width>
                         <height>45</height>
                         <depth>0</depth>
                         <hotspotX>0.540540516</hotspotX>
                         <hotspotY>0.533333361</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spr_torch" uid="57">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <type>normal</type>
+                        <is_lit>false</is_lit>
+                        <half_lit>false</half_lit>
+                        <timed_manager_uid>0</timed_manager_uid>
+                        <long_distance_uid>0</long_distance_uid>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                        <behavior-instance type="Timer" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>419.620452881</x>
+                        <y>161.584533691</y>
+                        <z>0</z>
+                        <width>20</width>
+                        <height>24</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.958333313</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spr_torch" uid="58">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <type>normal</type>
+                        <is_lit>false</is_lit>
+                        <half_lit>false</half_lit>
+                        <timed_manager_uid>0</timed_manager_uid>
+                        <long_distance_uid>0</long_distance_uid>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                        <behavior-instance type="Timer" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>314.846466064</x>
+                        <y>129.618667603</y>
+                        <z>0</z>
+                        <width>20</width>
+                        <height>24</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.958333313</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

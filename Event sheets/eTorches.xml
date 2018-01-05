@@ -443,6 +443,81 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <event-block sid="195704737485963">
+            <conditions>
+                <condition id="0" name="On function" sid="670161819190148" type="Function">
+                    <param id="0" name="Name">&quot;eTorches.Unlight_Half_Lit_Torches&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="972845710062988">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="931925791155810" type="System">
+                            <param id="0" name="Object">spr_torch</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="445153593486515">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="908253241010298" type="spr_torch">
+                                    <param id="0" name="Instance variable">half_lit</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="631963113749184" type="spr_torch">
+                                    <param id="0" name="Instance variable">half_lit</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="808188978677859" type="spr_torch_light">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="269114499434656" type="spr_fire">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="472564381720646">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="467804992778954" type="spr_torch">
+                                            <param id="0" name="Instance variable">type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;normal&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="9" name="Set scale" sid="348027618123645" type="spr_torch_light">
+                                            <param id="0" name="Scale">1</param>
+                                        </action>
+                                        <action id="9" name="Set scale" sid="283557828239606" type="spr_fire">
+                                            <param id="0" name="Scale">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="152173482245901">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="375951996390968" type="spr_torch">
+                                            <param id="0" name="Instance variable">type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;long_distance&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="9" name="Set scale" sid="562301435639608" type="spr_torch_light">
+                                            <param id="0" name="Scale">1.5</param>
+                                        </action>
+                                        <action id="9" name="Set scale" sid="342893210609148" type="spr_fire">
+                                            <param id="0" name="Scale">1.5</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
         <event-group description="Handles checking and restarting timed torches (but not lighting them)" sid="697712526199578" title="eTorches/TimedTorches">
             <sub-events>
                 <event-block sid="149755335622100">
@@ -455,62 +530,26 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="643459492567759">
+                <event-block sid="834355077693841">
                     <conditions>
-                        <condition id="-11" name="For Each" sid="652929645891515" type="System">
-                            <param id="0" name="Object">obj_timed_torch_handler</param>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="276578279661149" type="obj_timed_torch_handler">
+                            <param id="0" name="Instance variable">completed</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <variable comment="True until proven false." constant="0" name="are_all_lit" sid="845333291366478" static="0" type="text">true</variable>
-                        <event-block sid="949815230042373">
+                        <event-block sid="643459492567759">
                             <conditions>
-                                <condition id="-10" name="For" sid="214949095763514" type="System">
-                                    <param id="0" name="Name">&quot;&quot;</param>
-                                    <param id="1" name="Start index">0</param>
-                                    <param id="2" name="End index">tokencount(obj_timed_torch_handler.torch_uids, &quot;|&quot;) - 1</param>
+                                <condition id="-11" name="For Each" sid="652929645891515" type="System">
+                                    <param id="0" name="Object">obj_timed_torch_handler</param>
                                 </condition>
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="105534712476728">
+                                <variable comment="True until proven false." constant="0" name="are_all_lit" sid="845333291366478" static="0" type="text">true</variable>
+                                <event-block sid="949815230042373">
                                     <conditions>
-                                        <condition id="-14" name="Pick by unique ID" sid="253783079539581" type="spr_torch">
-                                            <param id="0" name="Unique ID">int(tokenat(obj_timed_torch_handler.torch_uids, loopindex, &quot;|&quot;))</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions />
-                                    <sub-events>
-                                        <event-block sid="724570984892089">
-                                            <conditions>
-                                                <condition id="-9" inverted="1" name="Is visible" sid="706816004792665" type="spr_fire" />
-                                                <condition id="-9" inverted="1" name="Is visible" sid="167952130883260" type="spr_torch_light" />
-                                            </conditions>
-                                            <actions>
-                                                <action id="-9" name="Set value" sid="686090056758419" type="System">
-                                                    <param id="0" name="Variable">are_all_lit</param>
-                                                    <param id="1" name="Value">&quot;false&quot;</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="202432331843648">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="656461172323026" type="System">
-                                    <param id="0" name="Variable">are_all_lit</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;true&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="681421281369604">
-                                    <conditions>
-                                        <condition id="-10" name="For" sid="969785390665225" type="System">
+                                        <condition id="-10" name="For" sid="214949095763514" type="System">
                                             <param id="0" name="Name">&quot;&quot;</param>
                                             <param id="1" name="Start index">0</param>
                                             <param id="2" name="End index">tokencount(obj_timed_torch_handler.torch_uids, &quot;|&quot;) - 1</param>
@@ -518,82 +557,121 @@
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="725067485747713">
+                                        <event-block sid="105534712476728">
                                             <conditions>
-                                                <condition id="-14" name="Pick by unique ID" sid="804043933960143" type="spr_torch">
+                                                <condition id="-14" name="Pick by unique ID" sid="253783079539581" type="spr_torch">
                                                     <param id="0" name="Unique ID">int(tokenat(obj_timed_torch_handler.torch_uids, loopindex, &quot;|&quot;))</param>
                                                 </condition>
                                             </conditions>
-                                            <actions>
-                                                <action id="-16" name="Set opacity" sid="557733096811701" type="spr_torch_light">
-                                                    <param id="0" name="Opacity">100</param>
-                                                </action>
-                                                <action id="9" name="Set scale" sid="561430273133291" type="spr_torch_light">
-                                                    <param id="0" name="Scale">1</param>
-                                                </action>
-                                                <action id="9" name="Set scale" sid="500121464394464" type="spr_fire">
-                                                    <param id="0" name="Scale">1</param>
-                                                </action>
-                                                <action id="-13" name="Set boolean" sid="816173539815450" type="spr_torch">
-                                                    <param id="0" name="Instance variable">is_lit</param>
-                                                    <param id="1" name="Value">1</param>
-                                                </action>
-                                                <action behavior="Flash" id="1" name="Stop flashing" sid="454692011955238" type="spr_torch" />
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="132255304633026">
-                                            <conditions />
-                                            <actions>
-                                                <action id="-13" name="Set boolean" sid="571248279232901" type="obj_timed_torch_handler">
-                                                    <param id="0" name="Instance variable">completed</param>
-                                                    <param id="1" name="Value">1</param>
-                                                </action>
-                                            </actions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="724570984892089">
+                                                    <conditions>
+                                                        <condition id="-9" inverted="1" name="Is visible" sid="706816004792665" type="spr_fire" />
+                                                        <condition id="-9" inverted="1" name="Is visible" sid="167952130883260" type="spr_torch_light" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="686090056758419" type="System">
+                                                            <param id="0" name="Variable">are_all_lit</param>
+                                                            <param id="1" name="Value">&quot;false&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="733450070383071">
-                            <conditions>
-                                <condition behavior="Timer" id="0" name="On timer" sid="253597733371972" type="obj_timed_torch_handler">
-                                    <param id="0" name="Tag">&quot;light&quot;</param>
-                                </condition>
-                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="573312152969500" type="obj_timed_torch_handler">
-                                    <param id="0" name="Instance variable">completed</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-13" name="Set boolean" sid="578695124152895" type="obj_timed_torch_handler">
-                                    <param id="0" name="Instance variable">has_started_timer</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                            </actions>
-                            <sub-events>
-                                <event-block sid="259281883354634">
+                                <event-block sid="202432331843648">
                                     <conditions>
-                                        <condition id="-10" name="For" sid="928650485246901" type="System">
-                                            <param id="0" name="Name">&quot;&quot;</param>
-                                            <param id="1" name="Start index">0</param>
-                                            <param id="2" name="End index">tokencount(obj_timed_torch_handler.torch_uids, &quot;|&quot;) - 1</param>
+                                        <condition id="-14" name="Compare variable" sid="656461172323026" type="System">
+                                            <param id="0" name="Variable">are_all_lit</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;true&quot;</param>
                                         </condition>
                                     </conditions>
-                                    <actions />
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="571248279232901" type="obj_timed_torch_handler">
+                                            <param id="0" name="Instance variable">completed</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
                                     <sub-events>
-                                        <event-block sid="964019380022875">
+                                        <event-block sid="681421281369604">
                                             <conditions>
-                                                <condition id="-14" name="Pick by unique ID" sid="618472336016486" type="spr_torch">
-                                                    <param id="0" name="Unique ID">int(tokenat(obj_timed_torch_handler.torch_uids, loopindex, &quot;|&quot;))</param>
+                                                <condition id="-10" name="For" sid="969785390665225" type="System">
+                                                    <param id="0" name="Name">&quot;&quot;</param>
+                                                    <param id="1" name="Start index">0</param>
+                                                    <param id="2" name="End index">tokencount(obj_timed_torch_handler.torch_uids, &quot;|&quot;) - 1</param>
                                                 </condition>
                                             </conditions>
-                                            <actions>
-                                                <action id="-15" name="Set visible" sid="865301704307241" type="spr_torch_light">
-                                                    <param id="0" name="Visibility">0</param>
-                                                </action>
-                                                <action id="-15" name="Set visible" sid="811048519687338" type="spr_fire">
-                                                    <param id="0" name="Visibility">0</param>
-                                                </action>
-                                            </actions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="725067485747713">
+                                                    <conditions>
+                                                        <condition id="-14" name="Pick by unique ID" sid="804043933960143" type="spr_torch">
+                                                            <param id="0" name="Unique ID">int(tokenat(obj_timed_torch_handler.torch_uids, loopindex, &quot;|&quot;))</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-16" name="Set opacity" sid="557733096811701" type="spr_torch_light">
+                                                            <param id="0" name="Opacity">100</param>
+                                                        </action>
+                                                        <action id="9" name="Set scale" sid="561430273133291" type="spr_torch_light">
+                                                            <param id="0" name="Scale">1</param>
+                                                        </action>
+                                                        <action id="9" name="Set scale" sid="500121464394464" type="spr_fire">
+                                                            <param id="0" name="Scale">1</param>
+                                                        </action>
+                                                        <action id="-13" name="Set boolean" sid="816173539815450" type="spr_torch">
+                                                            <param id="0" name="Instance variable">is_lit</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action behavior="Flash" id="1" name="Stop flashing" sid="454692011955238" type="spr_torch" />
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="733450070383071">
+                                    <conditions>
+                                        <condition behavior="Timer" id="0" name="On timer" sid="253597733371972" type="obj_timed_torch_handler">
+                                            <param id="0" name="Tag">&quot;light&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="578695124152895" type="obj_timed_torch_handler">
+                                            <param id="0" name="Instance variable">has_started_timer</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="259281883354634">
+                                            <conditions>
+                                                <condition id="-10" name="For" sid="928650485246901" type="System">
+                                                    <param id="0" name="Name">&quot;&quot;</param>
+                                                    <param id="1" name="Start index">0</param>
+                                                    <param id="2" name="End index">tokencount(obj_timed_torch_handler.torch_uids, &quot;|&quot;) - 1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="964019380022875">
+                                                    <conditions>
+                                                        <condition id="-14" name="Pick by unique ID" sid="618472336016486" type="spr_torch">
+                                                            <param id="0" name="Unique ID">int(tokenat(obj_timed_torch_handler.torch_uids, loopindex, &quot;|&quot;))</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-15" name="Set visible" sid="865301704307241" type="spr_torch_light">
+                                                            <param id="0" name="Visibility">0</param>
+                                                        </action>
+                                                        <action id="-15" name="Set visible" sid="811048519687338" type="spr_fire">
+                                                            <param id="0" name="Visibility">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>

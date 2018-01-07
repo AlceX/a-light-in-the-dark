@@ -392,19 +392,7 @@
                                     <param id="0" name="Instance variable">half_lit</param>
                                 </condition>
                             </conditions>
-                            <actions>
-                                <action id="-13" name="Set boolean" sid="259921951422867" type="spr_torch">
-                                    <param id="0" name="Instance variable">half_lit</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                                <action id="-13" name="Set boolean" sid="772667437969358" type="spr_torch">
-                                    <param id="0" name="Instance variable">is_lit</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-16" name="Set opacity" sid="197762396916313" type="spr_torch_light">
-                                    <param id="0" name="Opacity">100</param>
-                                </action>
-                            </actions>
+                            <actions />
                             <sub-events>
                                 <event-block sid="448141568758601">
                                     <conditions>
@@ -415,6 +403,17 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="-13" name="Set boolean" sid="429364921039708" type="spr_torch">
+                                            <param id="0" name="Instance variable">half_lit</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="744629414752266" type="spr_torch">
+                                            <param id="0" name="Instance variable">is_lit</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-16" name="Set opacity" sid="214919615096540" type="spr_torch_light">
+                                            <param id="0" name="Opacity">100</param>
+                                        </action>
                                         <action id="9" name="Set scale" sid="326692258766731" type="spr_torch_light">
                                             <param id="0" name="Scale">1</param>
                                         </action>
@@ -432,6 +431,17 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="-13" name="Set boolean" sid="271451930749609" type="spr_torch">
+                                            <param id="0" name="Instance variable">half_lit</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="866309306862518" type="spr_torch">
+                                            <param id="0" name="Instance variable">is_lit</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-16" name="Set opacity" sid="270717801894499" type="spr_torch_light">
+                                            <param id="0" name="Opacity">100</param>
+                                        </action>
                                         <action id="9" name="Set scale" sid="985476831699626" type="spr_torch_light">
                                             <param id="0" name="Scale">1.5</param>
                                         </action>
@@ -683,6 +693,14 @@
                                                         </condition>
                                                     </conditions>
                                                     <actions>
+                                                        <action id="-13" name="Set boolean" sid="736578051544477" type="spr_torch">
+                                                            <param id="0" name="Instance variable">half_lit</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-13" name="Set boolean" sid="343430442513576" type="spr_torch">
+                                                            <param id="0" name="Instance variable">is_lit</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
                                                         <action id="-15" name="Set visible" sid="865301704307241" type="spr_torch_light">
                                                             <param id="0" name="Visibility">0</param>
                                                         </action>

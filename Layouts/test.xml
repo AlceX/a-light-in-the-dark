@@ -90,7 +90,7 @@
                     <instance-variables>
                         <room_start_x>0</room_start_x>
                         <room_start_y>0</room_start_y>
-                        <has_boomerang>false</has_boomerang>
+                        <has_boomerang>true</has_boomerang>
                         <state>light</state>
                         <light_size>150</light_size>
                     </instance-variables>

@@ -14,7 +14,7 @@
             </conditions>
             <actions>
                 <action id="-4" name="Set position to another object" sid="537694194438327" type="spr_player_light">
-                    <param id="0" name="Object">event_torch</param>
+                    <param id="0" name="Object">pickup_items</param>
                     <param id="1" name="Image point (optional)">0</param>
                 </action>
             </actions>
@@ -22,16 +22,80 @@
         <event-block sid="812518629565836">
             <conditions>
                 <condition id="0" name="On collision with another object" sid="391852933423420" type="obj_player">
-                    <param id="0" name="Object">event_torch</param>
+                    <param id="0" name="Object">pickup_items</param>
                 </condition>
             </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="865615407057994" type="event_torch" />
-                <action id="-13" name="Set boolean" sid="990719914989026" type="obj_player">
-                    <param id="0" name="Instance variable">has_light</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-            </actions>
+            <actions />
+            <sub-events>
+                <event-block sid="841045408595589">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="317548799067281" type="pickup_items">
+                            <param id="0" name="Animation">&quot;torch&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="940878324037999" type="obj_player">
+                            <param id="0" name="Instance variable">state</param>
+                            <param id="1" name="Value">&quot;light&quot;</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="865615407057994" type="pickup_items" />
+                    </actions>
+                </event-block>
+                <event-block sid="471159022744098">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="562458704595429" type="pickup_items">
+                            <param id="0" name="Animation">&quot;boomerang&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="941389881412227" type="obj_player">
+                            <param id="0" name="Instance variable">has_boomerang</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="152657555364041" type="pickup_items" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="229594084256488">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="180822552406180" type="spr_bridge">
+                                    <param id="0" name="Unique ID">63</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="529084562813817" type="spr_bridge">
+                                    <param id="0" name="Opacity">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="465142569528714" type="spr_bridge">
+                                    <param id="0" name="Instance variable">Is_Enabled</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Solid" id="0" name="Set enabled" sid="762743485949321" type="spr_bridge">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="575468890723773">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="396506481515247" type="spr_bridge">
+                                    <param id="0" name="Unique ID">64</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="644946533166045" type="spr_bridge">
+                                    <param id="0" name="Opacity">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="568180673573682" type="spr_bridge">
+                                    <param id="0" name="Instance variable">Is_Enabled</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Solid" id="0" name="Set enabled" sid="582818356494321" type="spr_bridge">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>

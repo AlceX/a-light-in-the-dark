@@ -88,9 +88,9 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <has_light>true</has_light>
                         <room_start_x>0</room_start_x>
                         <room_start_y>0</room_start_y>
+                        <has_boomerang>false</has_boomerang>
                         <state>light</state>
                         <light_size>150</light_size>
                     </instance-variables>
@@ -110,8 +110,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>3899</x>
-                        <y>2665</y>
+                        <x>1206</x>
+                        <y>4120</y>
                         <z>0</z>
                         <width>25</width>
                         <height>25</height>
@@ -254,7 +254,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="event_torch" uid="18">
+                <instance type="pickup_items" uid="18">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -1557,8 +1557,8 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <Is_Enabled>false</Is_Enabled>
-                        <Torch_UIDs></Torch_UIDs>
+                        <Is_Enabled>true</Is_Enabled>
+                        <Torch_UIDs>65</Torch_UIDs>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Solid">
@@ -1599,8 +1599,8 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <Is_Enabled>false</Is_Enabled>
-                        <Torch_UIDs></Torch_UIDs>
+                        <Is_Enabled>true</Is_Enabled>
+                        <Torch_UIDs>65</Torch_UIDs>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Solid">
@@ -1644,7 +1644,7 @@
                         <type>timed</type>
                         <is_lit>false</is_lit>
                         <half_lit>false</half_lit>
-                        <timed_manager_uid>39</timed_manager_uid>
+                        <timed_manager_uid>0</timed_manager_uid>
                         <long_distance_uid>0</long_distance_uid>
                     </instance-variables>
                     <behavior-instances>
@@ -1708,7 +1708,7 @@
                     </properties>
                     <instance-variables>
                         <Is_Enabled>false</Is_Enabled>
-                        <Torch_UIDs>38</Torch_UIDs>
+                        <Torch_UIDs>65</Torch_UIDs>
                         <time_between_shots>1</time_between_shots>
                         <initial_delay>0</initial_delay>
                     </instance-variables>
@@ -1739,7 +1739,7 @@
                     </properties>
                     <instance-variables>
                         <Is_Enabled>false</Is_Enabled>
-                        <Torch_UIDs>38</Torch_UIDs>
+                        <Torch_UIDs>65</Torch_UIDs>
                         <time_between_shots>1</time_between_shots>
                         <initial_delay>0</initial_delay>
                     </instance-variables>
@@ -1844,8 +1844,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>766</x>
-                        <y>3437</y>
+                        <x>769</x>
+                        <y>3433</y>
                         <z>0</z>
                         <width>20</width>
                         <height>24</height>
@@ -2503,6 +2503,28 @@
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.958333313</hotspotY>
                         <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="pickup_items" uid="92">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>boomerang</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>827</x>
+                        <y>4130</y>
+                        <z>0</z>
+                        <width>37</width>
+                        <height>45</height>
+                        <depth>0</depth>
+                        <hotspotX>0.540540516</hotspotX>
+                        <hotspotY>0.533333361</hotspotY>
+                        <angle>2.658848763</angle>
                         <opacity>1</opacity>
                     </world>
                 </instance>

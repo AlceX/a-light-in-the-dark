@@ -93,6 +93,9 @@
                         <condition id="0" name="On key pressed" sid="493873737764856" type="Keyboard">
                             <param id="0" name="Key">32</param>
                         </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="524186987677489" type="obj_player">
+                            <param id="0" name="Instance variable">has_boomerang</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="0" name="Call function" sid="573118360567500" type="Function">

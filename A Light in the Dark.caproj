@@ -55,9 +55,9 @@
             <object-type name="obj_player" sid="467835110333252">
                 <plugin id="Sprite" />
                 <instance-variables>
-                    <instance-variable name="has_light" sid="281012660375812" type="boolean" />
                     <instance-variable name="room_start_x" sid="462728022570745" type="number" />
                     <instance-variable name="room_start_y" sid="933987934723961" type="number" />
+                    <instance-variable comment="Need an array or something cleaner than this..." name="has_boomerang" sid="428181633610646" type="boolean" />
                     <instance-variable comment='&quot;no_light&quot;, &quot;light&quot;, &quot;boomerang&quot;' name="state" sid="949421595420359" type="string" />
                     <instance-variable name="light_size" sid="500165864999458" type="number" />
                 </instance-variables>
@@ -317,11 +317,25 @@
             </object-type>
         </object-folder>
         <object-folder name="Map">
-            <object-type name="event_torch" sid="565485772441531">
+            <object-type name="pickup_items" sid="565485772441531">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="938475431817573" speed="5">
+                    <animation framecount="1" loop="0" name="torch" pingpong="0" repeatcount="1" repeatto="0" sid="938475431817573" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="boomerang" pingpong="0" repeatcount="1" repeatto="0" sid="366950063208407" speed="5">
+                        <frame duration="1" hotspotX="0.540541" hotspotY="0.533333" original-source="C:\Users\gamedev\Desktop\ALITD\art\boomerang.png">
+                            <collision-poly>
+                                <point x="0.0810811" y="0.0666667" />
+                                <point x="0.540541" y="0.0222222" />
+                                <point x="0.783784" y="0.244444" />
+                                <point x="0.972973" y="0.533333" />
+                                <point x="0.756757" y="0.8" />
+                                <point x="0.540541" y="0.977778" />
+                                <point x="0.108108" y="0.977778" />
+                                <point x="0.513514" y="0.533333" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>

@@ -148,6 +148,9 @@
             </object-type>
             <object-type name="spr_boomerang" sid="203065306947060">
                 <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="initial_rotation_speed" sid="414550112904626" type="number" />
+                </instance-variables>
                 <behaviors>
                     <behavior-type name="Rotate" sid="944341346866156">
                         <behavior id="Rotate" />

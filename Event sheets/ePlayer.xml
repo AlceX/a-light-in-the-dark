@@ -168,6 +168,9 @@
                                     <param id="0" name="Width">Self.Width - obj_boomerang.reduction_per_torch</param>
                                     <param id="1" name="Height">Self.Height - obj_boomerang.reduction_per_torch</param>
                                 </action>
+                                <action behavior="Rotate" id="0" name="Set speed" sid="712912628156333" type="spr_boomerang">
+                                    <param id="0" name="Speed">Self.Rotate.Speed - 120</param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>
@@ -294,6 +297,9 @@
                         </action>
                         <action id="-8" name="Set angle" sid="495698583888675" type="spr_boomerang">
                             <param id="0" name="Angle">obj_player.Angle</param>
+                        </action>
+                        <action behavior="Rotate" id="0" name="Set speed" sid="671144122460569" type="spr_boomerang">
+                            <param id="0" name="Speed">Self.initial_rotation_speed</param>
                         </action>
                         <action behavior="Solid" id="0" name="Set enabled" sid="421696925991999" type="tm_collision">
                             <param id="0" name="State">0</param>

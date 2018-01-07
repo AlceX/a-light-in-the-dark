@@ -343,11 +343,14 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <initial_rotation_speed>720</initial_rotation_speed>
+                    </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Rotate">
                             <properties>
-                                <speed>400</speed>
-                                <acceleration>0</acceleration>
+                                <speed>720</speed>
+                                <acceleration>-120</acceleration>
                             </properties>
                         </behavior-instance>
                     </behavior-instances>

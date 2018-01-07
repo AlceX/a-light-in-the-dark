@@ -199,7 +199,7 @@
         <event-group description="Handles restarting the room when the player respwans." sid="922940337159838" title="eEvents/Respawn">
             <sub-events>
                 <variable comment='List with &quot;|&quot; separator.' constant="0" name="events" sid="669458307739849" static="1" type="text"></variable>
-                <comment>Timed torches are events too... agh might leave that for later.</comment>
+                <comment bookmark="1">TODO: Respawn for timed torches</comment>
                 <event-block sid="360078332243874">
                     <conditions>
                         <condition id="0" name="On function" sid="910193538682981" type="Function">

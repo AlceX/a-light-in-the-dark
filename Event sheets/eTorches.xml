@@ -420,6 +420,10 @@
                                         <action id="9" name="Set scale" sid="138198415984227" type="spr_fire">
                                             <param id="0" name="Scale">1</param>
                                         </action>
+                                        <action id="0" name="Call function" sid="802774971357967" type="Function">
+                                            <param id="0" name="Name">&quot;eEvents/Respawn.Add_Event&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;torch_&quot; &amp; spr_torch.UID</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="937866054220664">
@@ -447,6 +451,10 @@
                                         </action>
                                         <action id="9" name="Set scale" sid="994712034250326" type="spr_fire">
                                             <param id="0" name="Scale">1.5</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="476220773402811" type="Function">
+                                            <param id="0" name="Name">&quot;eEvents/Respawn.Add_Event&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;torch_&quot; &amp; spr_torch.UID</param>
                                         </action>
                                     </actions>
                                 </event-block>

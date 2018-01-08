@@ -233,22 +233,39 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <comment>Called from eHazards/Turrets.</comment>
-        <event-block sid="864679290644463">
+        <event-block sid="326279040565747">
             <conditions>
-                <condition id="0" name="On function" sid="458181996845446" type="Function">
-                    <param id="0" name="Name">&quot;ePlayer.Respawn&quot;</param>
+                <condition id="1" name="Is overlapping another object" sid="844654409375885" type="spr_player">
+                    <param id="0" name="Object">spr_background_decoration</param>
                 </condition>
             </conditions>
             <actions />
             <sub-events>
-                <comment>This gets a lot more messy when you consider the boomerang...</comment>
-                <event-block sid="810505496518971">
-                    <conditions />
+                <event-block sid="438137736492101">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="240656400158247" type="spr_player">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Y co-ordinate">spr_background_decoration.Y - Self.Height / 2</param>
+                        </condition>
+                    </conditions>
                     <actions>
-                        <action id="-3" name="Set position" sid="714627252579139" type="obj_player">
-                            <param id="0" name="X">Self.room_start_x</param>
-                            <param id="1" name="Y">Self.room_start_y</param>
+                        <action id="-29" name="Move to object" sid="398837411196555" type="spr_player">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Object">spr_background_decoration</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="737989393467808">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="924638186189908" type="spr_player">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Y co-ordinate">spr_background_decoration.Y  - Self.Height / 2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-29" name="Move to object" sid="290227265870547" type="spr_player">
+                            <param id="0" name="Where">1</param>
+                            <param id="1" name="Object">spr_background_decoration</param>
                         </action>
                     </actions>
                 </event-block>
@@ -465,6 +482,27 @@
                     <actions>
                         <action behavior="Solid" id="0" name="Set enabled" sid="914856558004700" type="spr_bridge">
                             <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Called from eHazards/Turrets.</comment>
+        <event-block sid="864679290644463">
+            <conditions>
+                <condition id="0" name="On function" sid="458181996845446" type="Function">
+                    <param id="0" name="Name">&quot;ePlayer.Respawn&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>This gets a lot more messy when you consider the boomerang...</comment>
+                <event-block sid="810505496518971">
+                    <conditions />
+                    <actions>
+                        <action id="-3" name="Set position" sid="714627252579139" type="obj_player">
+                            <param id="0" name="X">Self.room_start_x</param>
+                            <param id="1" name="Y">Self.room_start_y</param>
                         </action>
                     </actions>
                 </event-block>

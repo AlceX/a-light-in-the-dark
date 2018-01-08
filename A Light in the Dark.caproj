@@ -420,6 +420,101 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="spr_background_decoration" sid="936463647898747">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation-folder name="bushes">
+                        <animation framecount="1" loop="0" name="bush_big_lightgreen" pingpong="0" repeatcount="1" repeatto="0" sid="702949973965403" speed="5">
+                            <frame duration="1" hotspotX="0.509434" hotspotY="1" original-source="C:\Users\gamedev\Desktop\ALITD\art\kenneyrpgpack\PNG\rpgTile155.png">
+                                <collision-poly>
+                                    <point x="0.339623" y="0.0888889" />
+                                    <point x="0.509434" y="0.0222222" />
+                                    <point x="0.679245" y="0.0888889" />
+                                    <point x="0.849057" y="0.288889" />
+                                    <point x="0.886792" y="0.733333" />
+                                    <point x="0.509434" y="0.888889" />
+                                    <point x="0.132075" y="0.733333" />
+                                    <point x="0.188679" y="0.288889" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="bush_big_darkgreen" pingpong="0" repeatcount="1" repeatto="0" sid="371100195135411" speed="5">
+                            <frame duration="1" hotspotX="0.509434" hotspotY="1" original-source="C:\Users\gamedev\Desktop\ALITD\art\kenneyrpgpack\PNG\rpgTile159.png">
+                                <collision-poly>
+                                    <point x="0.339623" y="0.0888889" />
+                                    <point x="0.509434" y="0.0222222" />
+                                    <point x="0.679245" y="0.0888889" />
+                                    <point x="0.849057" y="0.288889" />
+                                    <point x="0.886792" y="0.733333" />
+                                    <point x="0.509434" y="0.888889" />
+                                    <point x="0.132075" y="0.733333" />
+                                    <point x="0.188679" y="0.288889" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="bush_small_lightgreen" pingpong="0" repeatcount="1" repeatto="0" sid="672646141584204" speed="5">
+                            <frame duration="1" hotspotX="0.517241" hotspotY="1" original-source="C:\Users\gamedev\Desktop\ALITD\art\kenneyrpgpack\PNG\rpgTile156.png" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="bush_small_darkgreen" pingpong="0" repeatcount="1" repeatto="0" sid="393913788860053" speed="5">
+                            <frame duration="1" hotspotX="0.517241" hotspotY="1" original-source="C:\Users\gamedev\Desktop\ALITD\art\kenneyrpgpack\PNG\rpgTile160.png" />
+                        </animation>
+                    </animation-folder>
+                    <animation-folder name="trees">
+                        <animation framecount="1" loop="0" name="tree_big_lightgreen" pingpong="0" repeatcount="1" repeatto="0" sid="879536345103603" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\gamedev\Desktop\ALITD\art\kenneyrpgpack\tree_big_lightgreen.png">
+                                <collision-poly>
+                                    <point x="0.296875" y="0.148438" />
+                                    <point x="0.5" y="0.0390625" />
+                                    <point x="0.703125" y="0.148438" />
+                                    <point x="0.953125" y="0.5" />
+                                    <point x="0.625" y="0.8125" />
+                                    <point x="0.5" y="0.992188" />
+                                    <point x="0.375" y="0.8125" />
+                                    <point x="0.03125" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="tree_big_darkgreen" pingpong="0" repeatcount="1" repeatto="0" sid="682625698283875" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\gamedev\Desktop\ALITD\art\kenneyrpgpack\tree_big_darkgreen.png">
+                                <collision-poly>
+                                    <point x="0.296875" y="0.148438" />
+                                    <point x="0.5" y="0.0390625" />
+                                    <point x="0.703125" y="0.148438" />
+                                    <point x="0.953125" y="0.5" />
+                                    <point x="0.625" y="0.8125" />
+                                    <point x="0.5" y="0.992188" />
+                                    <point x="0.375" y="0.8125" />
+                                    <point x="0.03125" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="tree_small_lightgreen" pingpong="0" repeatcount="1" repeatto="0" sid="453985896827242" speed="5">
+                            <frame duration="1" hotspotX="0.509434" hotspotY="1" original-source="C:\Users\gamedev\Desktop\ALITD\art\kenneyrpgpack\tree_small_lightgreen.png">
+                                <collision-poly>
+                                    <point x="0.45283" y="0.019802" />
+                                    <point x="0.509434" y="0.00990099" />
+                                    <point x="0.54717" y="0.029703" />
+                                    <point x="0.90566" y="0.366337" />
+                                    <point x="0.509434" y="0.990099" />
+                                    <point x="0.0943396" y="0.366337" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="tree_small_darkgreen" pingpong="0" repeatcount="1" repeatto="0" sid="746098435366924" speed="5">
+                            <frame duration="1" hotspotX="0.509434" hotspotY="1" original-source="C:\Users\gamedev\Desktop\ALITD\art\kenneyrpgpack\tree_small_darkgreen.png">
+                                <collision-poly>
+                                    <point x="0.45283" y="0.019802" />
+                                    <point x="0.509434" y="0.00990099" />
+                                    <point x="0.54717" y="0.029703" />
+                                    <point x="0.90566" y="0.366337" />
+                                    <point x="0.509434" y="0.990099" />
+                                    <point x="0.0943396" y="0.366337" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </animation-folder>
+            </object-type>
         </object-folder>
     </object-folder>
     <families>

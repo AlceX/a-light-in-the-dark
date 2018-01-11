@@ -10,6 +10,7 @@
     <unique-id>17akzzf9cb4qm</unique-id>
     <saved-with-version>25000</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
@@ -318,6 +319,9 @@
             <object-type name="Keyboard" sid="728111009539672">
                 <plugin id="Keyboard" />
             </object-type>
+            <object-type name="Audio" sid="614651411169380">
+                <plugin id="Audio" />
+            </object-type>
         </object-folder>
         <object-folder name="Map">
             <object-type name="pickup_items" sid="565485772441531">
@@ -546,9 +550,26 @@
     <global-instances>
         <global-instance type="Function" uid="7" />
         <global-instance type="Keyboard" uid="55" />
+        <global-instance type="Audio" uid="223">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
     </global-instances>
     <sounds-folder />
-    <music-folder />
+    <music-folder>
+        <file name="msc_bxd.m4a" />
+        <file name="msc_bxd.ogg" />
+    </music-folder>
     <files-folder>
         <file-folder name="Icons">
             <file name="icon-16.png" />

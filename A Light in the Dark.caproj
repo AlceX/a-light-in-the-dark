@@ -565,7 +565,18 @@
             </properties>
         </global-instance>
     </global-instances>
-    <sounds-folder />
+    <sounds-folder>
+        <sound-folder name="grass">
+            <file name="sfx_grass_01.m4a" />
+            <file name="sfx_grass_01.ogg" />
+            <file name="sfx_grass_02.m4a" />
+            <file name="sfx_grass_02.ogg" />
+            <file name="sfx_grass_03.m4a" />
+            <file name="sfx_grass_03.ogg" />
+            <file name="sfx_grass_04.m4a" />
+            <file name="sfx_grass_04.ogg" />
+        </sound-folder>
+    </sounds-folder>
     <music-folder>
         <file name="msc_bxd.m4a" />
         <file name="msc_bxd.ogg" />

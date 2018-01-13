@@ -576,6 +576,16 @@
             <file name="sfx_grass_04.m4a" />
             <file name="sfx_grass_04.ogg" />
         </sound-folder>
+        <sound-folder name="rubble">
+            <file name="sfx_rubble_01.m4a" />
+            <file name="sfx_rubble_01.ogg" />
+            <file name="sfx_rubble_02.m4a" />
+            <file name="sfx_rubble_02.ogg" />
+            <file name="sfx_rubble_03.m4a" />
+            <file name="sfx_rubble_03.ogg" />
+            <file name="sfx_rubble_04.m4a" />
+            <file name="sfx_rubble_04.ogg" />
+        </sound-folder>
     </sounds-folder>
     <music-folder>
         <file name="msc_bxd.m4a" />

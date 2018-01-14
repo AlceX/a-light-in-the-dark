@@ -586,6 +586,14 @@
             <file name="sfx_rubble_04.m4a" />
             <file name="sfx_rubble_04.ogg" />
         </sound-folder>
+        <sound-folder name="boomerang">
+            <file name="sfx_boomerang_grab.m4a" />
+            <file name="sfx_boomerang_grab.ogg" />
+            <file name="sfx_boomerang_throw.m4a" />
+            <file name="sfx_boomerang_throw.ogg" />
+            <file name="sfx_boomerang_fall.m4a" />
+            <file name="sfx_boomerang_fall.ogg" />
+        </sound-folder>
         <file name="sfx_fire_lit.m4a" />
         <file name="sfx_fire_lit.ogg" />
     </sounds-folder>

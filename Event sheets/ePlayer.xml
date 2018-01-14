@@ -98,6 +98,12 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Play" sid="865679017135296" type="Audio">
+                            <param id="0" name="Audio file">sfx_boomerang_throw</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
                         <action id="0" name="Call function" sid="573118360567500" type="Function">
                             <param id="0" name="Name">&quot;ePlayer.throw_boomerang&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
@@ -199,6 +205,12 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Play" sid="278750648031276" type="Audio">
+                            <param id="0" name="Audio file">sfx_boomerang_grab</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
                         <action id="0" name="Call function" sid="248101604178555" type="Function">
                             <param id="0" name="Name">&quot;ePlayer.grab_boomerang&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
@@ -221,6 +233,12 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Play" sid="853852583185554" type="Audio">
+                            <param id="0" name="Audio file">sfx_boomerang_fall</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">10</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
                         <action id="0" name="Call function" sid="624795248796815" type="Function">
                             <param id="0" name="Name">&quot;ePlayer.grab_boomerang&quot;</param>
                             <param id="1" name="Parameter {n}"></param>

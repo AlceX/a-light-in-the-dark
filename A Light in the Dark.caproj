@@ -566,26 +566,6 @@
         </global-instance>
     </global-instances>
     <sounds-folder>
-        <sound-folder name="grass">
-            <file name="sfx_grass_01.m4a" />
-            <file name="sfx_grass_01.ogg" />
-            <file name="sfx_grass_02.m4a" />
-            <file name="sfx_grass_02.ogg" />
-            <file name="sfx_grass_03.m4a" />
-            <file name="sfx_grass_03.ogg" />
-            <file name="sfx_grass_04.m4a" />
-            <file name="sfx_grass_04.ogg" />
-        </sound-folder>
-        <sound-folder name="rubble">
-            <file name="sfx_rubble_01.m4a" />
-            <file name="sfx_rubble_01.ogg" />
-            <file name="sfx_rubble_02.m4a" />
-            <file name="sfx_rubble_02.ogg" />
-            <file name="sfx_rubble_03.m4a" />
-            <file name="sfx_rubble_03.ogg" />
-            <file name="sfx_rubble_04.m4a" />
-            <file name="sfx_rubble_04.ogg" />
-        </sound-folder>
         <sound-folder name="boomerang">
             <file name="sfx_boomerang_grab.m4a" />
             <file name="sfx_boomerang_grab.ogg" />
@@ -593,6 +573,28 @@
             <file name="sfx_boomerang_throw.ogg" />
             <file name="sfx_boomerang_fall.m4a" />
             <file name="sfx_boomerang_fall.ogg" />
+        </sound-folder>
+        <sound-folder name="steps">
+            <sound-folder name="grass">
+                <file name="sfx_grass_01.m4a" />
+                <file name="sfx_grass_01.ogg" />
+                <file name="sfx_grass_02.m4a" />
+                <file name="sfx_grass_02.ogg" />
+                <file name="sfx_grass_03.m4a" />
+                <file name="sfx_grass_03.ogg" />
+                <file name="sfx_grass_04.m4a" />
+                <file name="sfx_grass_04.ogg" />
+            </sound-folder>
+            <sound-folder name="rubble">
+                <file name="sfx_rubble_01.m4a" />
+                <file name="sfx_rubble_01.ogg" />
+                <file name="sfx_rubble_02.m4a" />
+                <file name="sfx_rubble_02.ogg" />
+                <file name="sfx_rubble_03.m4a" />
+                <file name="sfx_rubble_03.ogg" />
+                <file name="sfx_rubble_04.m4a" />
+                <file name="sfx_rubble_04.ogg" />
+            </sound-folder>
         </sound-folder>
         <file name="sfx_fire_lit.m4a" />
         <file name="sfx_fire_lit.ogg" />

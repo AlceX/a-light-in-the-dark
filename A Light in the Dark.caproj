@@ -611,6 +611,14 @@
             <file name="sfx_fire_lit.m4a" />
             <file name="sfx_fire_lit.ogg" />
         </sound-folder>
+        <sound-folder name="turret">
+            <file name="sfx_turret_hit.m4a" />
+            <file name="sfx_turret_hit.ogg" />
+            <file name="sfx_turret_shoot_01.m4a" />
+            <file name="sfx_turret_shoot_01.ogg" />
+            <file name="sfx_turret_shoot_02.m4a" />
+            <file name="sfx_turret_shoot_02.ogg" />
+        </sound-folder>
     </sounds-folder>
     <music-folder>
         <file name="msc_bxd.m4a" />

@@ -54,6 +54,22 @@
                                     <param id="1" name="Parameter {n}">spr_turret.UID</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="764064574737903">
+                                    <conditions>
+                                        <condition id="-3" name="Is on-screen" sid="156145417629028" type="spr_turret" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Play (by name)" sid="980363725432404" type="Audio">
+                                            <param id="0" name="Folder">0</param>
+                                            <param id="1" name="Audio file name">&quot;sfx_turret_shoot_0&quot; &amp; str(round(random(1, 2)))</param>
+                                            <param id="3" name="Loop">0</param>
+                                            <param id="4" name="Volume">-5</param>
+                                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -110,6 +126,12 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Play" sid="583378634385280" type="Audio">
+                            <param id="0" name="Audio file">sfx_turret_hit</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
                         <action id="0" name="Call function" sid="767915150981885" type="Function">
                             <param id="0" name="Name">&quot;eEvents/Respawn.execute&quot;</param>
                             <param id="1" name="Parameter {n}"></param>

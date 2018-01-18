@@ -533,6 +533,13 @@
                 <instance-variable comment='List with &quot;|&quot; separator.' name="Torch_UIDs" sid="866067486367695" type="string" />
             </instance-variables>
         </family>
+        <family name="ZOrderable" plugin-id="Sprite" sid="776760189820205">
+            <members>
+                <member>spr_background_decoration</member>
+                <member>spr_fire</member>
+                <member>spr_torch</member>
+            </members>
+        </family>
     </families>
     <layout-folder>
         <layout>test.xml</layout>

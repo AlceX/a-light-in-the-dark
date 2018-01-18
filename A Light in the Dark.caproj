@@ -596,8 +596,10 @@
                 <file name="sfx_rubble_04.ogg" />
             </sound-folder>
         </sound-folder>
-        <file name="sfx_fire_lit.m4a" />
-        <file name="sfx_fire_lit.ogg" />
+        <sound-folder name="torch">
+            <file name="sfx_fire_lit.m4a" />
+            <file name="sfx_fire_lit.ogg" />
+        </sound-folder>
     </sounds-folder>
     <music-folder>
         <file name="msc_bxd.m4a" />

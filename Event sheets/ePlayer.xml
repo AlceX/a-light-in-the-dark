@@ -61,6 +61,17 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <event-block sid="364891026491051">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="823085497867114" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="259240915823092" type="Function">
+                    <param id="0" name="Name">&quot;ePlayer.simulate_wasd&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="472801814043288">
             <conditions>
                 <condition id="-7" name="Compare instance variable" sid="683827748743732" type="obj_player">
@@ -447,6 +458,136 @@
                                     </actions>
                                 </event-block>
                             </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="977643222556871">
+            <conditions>
+                <condition id="0" name="On function" sid="182486329593571" type="Function">
+                    <param id="0" name="Name">&quot;ePlayer.simulate_wasd&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="258100363318588">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="888854873451871" type="obj_player">
+                            <param id="0" name="Instance variable">state</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;light&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="458642668569866">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="843673864539411" type="Keyboard">
+                                    <param id="0" name="Key">87</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="876123930217722" type="obj_player">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="715105227352826">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="290973599285713" type="Keyboard">
+                                    <param id="0" name="Key">65</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="354218610367306" type="obj_player">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="779236086848460">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="358718765427957" type="Keyboard">
+                                    <param id="0" name="Key">83</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="969773906883098" type="obj_player">
+                                    <param id="0" name="Control">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="296776233289552">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="945106918722349" type="Keyboard">
+                                    <param id="0" name="Key">68</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="369570788575651" type="obj_player">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="133444687002389">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="847319149566581" type="obj_player">
+                            <param id="0" name="Instance variable">state</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;boomerang&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="140873592349529">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="728655290557772" type="Keyboard">
+                                    <param id="0" name="Key">87</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="466529527522115" type="obj_boomerang">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="809610520067600">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="631610202755088" type="Keyboard">
+                                    <param id="0" name="Key">65</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="507460575448659" type="obj_boomerang">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="437836623556438">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="340121465710933" type="Keyboard">
+                                    <param id="0" name="Key">83</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="297580950812954" type="obj_boomerang">
+                                    <param id="0" name="Control">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="603436087700339">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="872722996503473" type="Keyboard">
+                                    <param id="0" name="Key">68</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="935871437016588" type="obj_boomerang">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>

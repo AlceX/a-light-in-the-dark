@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>ePlayer</name>
     <events>
+        <variable constant="1" name="increment_per_special_torch" sid="978129557339638" static="0" type="number">35</variable>
         <event-block sid="369624389592166">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="716567780308283" type="System" />
@@ -107,6 +108,20 @@
                         <action id="0" name="Call function" sid="573118360567500" type="Function">
                             <param id="0" name="Name">&quot;ePlayer.throw_boomerang&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="595854787985028">
+                    <conditions>
+                        <condition id="-5" name="Compare width" sid="745768892496272" type="spr_player_light">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Width">obj_player.light_size</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-7" name="Set size" sid="214138614511309" type="spr_player_light">
+                            <param id="0" name="Width">Self.Width + 25 * dt</param>
+                            <param id="1" name="Height">Self.Height + 25 * dt</param>
                         </action>
                     </actions>
                 </event-block>
@@ -653,7 +668,7 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <comment>Called from eHazards/Turrets.</comment>
+        <comment>Called from eEvents/Respawn.</comment>
         <event-block sid="864679290644463">
             <conditions>
                 <condition id="0" name="On function" sid="458181996845446" type="Function">
@@ -669,6 +684,56 @@
                         <action id="-3" name="Set position" sid="714627252579139" type="obj_player">
                             <param id="0" name="X">Self.room_start_x</param>
                             <param id="1" name="Y">Self.room_start_y</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Called from eTorches.</comment>
+        <event-block sid="675785027355939">
+            <conditions>
+                <condition id="0" name="On function" sid="942691462621008" type="Function">
+                    <param id="0" name="Name">&quot;ePlayer.Increase_Light_Size&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="887240938621521">
+                    <conditions />
+                    <actions>
+                        <action id="0" name="Play" sid="528007146173487" type="Audio">
+                            <param id="0" name="Audio file">sfx_upgrade</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="546875443948389" type="obj_player">
+                            <param id="0" name="Instance variable">light_size</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Called from eEvents/Respawn.</comment>
+        <event-block sid="941344565808589">
+            <conditions>
+                <condition id="0" name="On function" sid="243220434308379" type="Function">
+                    <param id="0" name="Name">&quot;ePlayer.Reduce_Light_Size&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="690387671136514">
+                    <conditions />
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="116804659660389" type="obj_player">
+                            <param id="0" name="Instance variable">light_size</param>
+                            <param id="1" name="Value">INCREMENT_PER_SPECIAL_TORCH</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="724708357820506" type="spr_player_light">
+                            <param id="0" name="Width">obj_player.light_size</param>
+                            <param id="1" name="Height">obj_player.light_size</param>
                         </action>
                     </actions>
                 </event-block>

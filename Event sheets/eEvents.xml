@@ -274,6 +274,41 @@
                                         </event-block>
                                     </sub-events>
                                 </event-block>
+                                <event-block sid="837054944263930">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="333185385072474" type="System">
+                                            <param id="0" name="First value">left(event, 7)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;upgrade&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="655438767016059">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="255652241405319" type="spr_torch">
+                                                    <param id="0" name="Unique ID">int(tokenat(event, 1, &quot;_&quot;))</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-15" name="Set visible" sid="762631533121210" type="spr_torch_light">
+                                                    <param id="0" name="Visibility">0</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="841364311588466" type="spr_fire">
+                                                    <param id="0" name="Visibility">0</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="637120536391832" type="spr_torch">
+                                                    <param id="0" name="Instance variable">is_lit</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="567549981030239" type="Function">
+                                                    <param id="0" name="Name">&quot;ePlayer.Reduce_Light_Size&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
                                 <event-block sid="213469289238709">
                                     <conditions>
                                         <condition id="-8" name="Compare two values" sid="535252600570646" type="System">

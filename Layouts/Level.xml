@@ -333,7 +333,7 @@
                         <room_start_x>0</room_start_x>
                         <room_start_y>0</room_start_y>
                         <has_boomerang>false</has_boomerang>
-                        <state>no_light</state>
+                        <state>light</state>
                         <light_size>150</light_size>
                     </instance-variables>
                     <behavior-instances>
@@ -352,8 +352,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>3497</x>
-                        <y>4714</y>
+                        <x>2835</x>
+                        <y>3793</y>
                         <z>0</z>
                         <width>25</width>
                         <height>25</height>
@@ -1941,7 +1941,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <type>timed</type>
+                        <type>upgrade</type>
                         <is_lit>false</is_lit>
                         <half_lit>false</half_lit>
                         <timed_manager_uid>39</timed_manager_uid>
@@ -2662,7 +2662,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <type>timed</type>
+                        <type>upgrade</type>
                         <is_lit>false</is_lit>
                         <half_lit>false</half_lit>
                         <timed_manager_uid>39</timed_manager_uid>
@@ -2691,15 +2691,15 @@
                 <instance type="spr_torch" uid="90">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
+                        <initial-animation>upgrade</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <type>timed</type>
+                        <type>upgrade</type>
                         <is_lit>false</is_lit>
                         <half_lit>false</half_lit>
-                        <timed_manager_uid>39</timed_manager_uid>
+                        <timed_manager_uid>0</timed_manager_uid>
                         <long_distance_uid>0</long_distance_uid>
                         <has_ticked>false</has_ticked>
                     </instance-variables>
@@ -2713,11 +2713,11 @@
                         <x>2880</x>
                         <y>4167</y>
                         <z>0</z>
-                        <width>20</width>
-                        <height>24</height>
+                        <width>22</width>
+                        <height>26</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.958333313</hotspotY>
+                        <hotspotY>1</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

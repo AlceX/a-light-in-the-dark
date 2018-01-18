@@ -110,6 +110,34 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="644160174465977">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="848595307974314" type="spr_torch">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;upgrade&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="973187282572303" type="spr_torch">
+                                    <param id="0" name="Animation">&quot;upgrade&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="277613878342591" type="spr_torch">
+                                    <param id="0" name="Scale">1.5</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="953455767495446" type="spr_fire">
+                                    <param id="0" name="Animation">&quot;upgrade&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="927220831157284" type="spr_fire">
+                                    <param id="0" name="Scale">1.5</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="766958488787437" type="spr_torch_light">
+                                    <param id="0" name="Scale">0.5</param>
+                                </action>
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-block>
             </sub-events>
@@ -253,6 +281,35 @@
                                         </event-block>
                                     </sub-events>
                                 </event-block>
+                                <event-block sid="962060259656180">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="295454242166088" type="spr_torch">
+                                            <param id="0" name="Instance variable">type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;upgrade&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="509983025685062" type="spr_torch">
+                                            <param id="0" name="Instance variable">is_lit</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="199981256877730" type="Audio">
+                                            <param id="0" name="Audio file">sfx_fire_lit</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="595656925336522" type="Function">
+                                            <param id="0" name="Name">&quot;eEvents/Respawn.Add_Event&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;upgrade_&quot; &amp; spr_torch.UID</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="695213452612350" type="Function">
+                                            <param id="0" name="Name">&quot;ePlayer.Increase_Light_Size&quot;</param>
+                                            <param id="1" name="Parameter {n}">INCREMENT_PER_SPECIAL_TORCH</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                             </sub-events>
                         </event-block>
                     </sub-events>
@@ -342,6 +399,26 @@
                                         <action id="0" name="Call function" sid="142283931702999" type="Function">
                                             <param id="0" name="Name">&quot;eTorches.Boomerang_Touch_Torch&quot;</param>
                                             <param id="1" name="Parameter {n}">spr_torch.long_distance_uid</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="430431509808992">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="250772826468561" type="spr_torch">
+                                            <param id="0" name="Instance variable">type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;upgrade&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="350286115514464" type="spr_torch_light">
+                                            <param id="0" name="Opacity">50</param>
+                                        </action>
+                                        <action id="9" name="Set scale" sid="609144418944899" type="spr_torch_light">
+                                            <param id="0" name="Scale">0.25</param>
+                                        </action>
+                                        <action id="9" name="Set scale" sid="295341963965573" type="spr_fire">
+                                            <param id="0" name="Scale">1</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -490,6 +567,42 @@
                                         </action>
                                     </actions>
                                 </event-block>
+                                <event-block sid="868360442192264">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="816190229611874" type="spr_torch">
+                                            <param id="0" name="Instance variable">type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;upgrade&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="802204097844412" type="spr_torch">
+                                            <param id="0" name="Instance variable">half_lit</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="693835573144234" type="spr_torch">
+                                            <param id="0" name="Instance variable">is_lit</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-16" name="Set opacity" sid="202950232543511" type="spr_torch_light">
+                                            <param id="0" name="Opacity">100</param>
+                                        </action>
+                                        <action id="9" name="Set scale" sid="189519686030245" type="spr_torch_light">
+                                            <param id="0" name="Scale">0.5</param>
+                                        </action>
+                                        <action id="9" name="Set scale" sid="816240843197323" type="spr_fire">
+                                            <param id="0" name="Scale">1.5</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="244968651735847" type="Function">
+                                            <param id="0" name="Name">&quot;eEvents/Respawn.Add_Event&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;upgrade_&quot; &amp; spr_torch.UID</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="855011462021442" type="Function">
+                                            <param id="0" name="Name">&quot;ePlayer.Increase_Light_Size&quot;</param>
+                                            <param id="1" name="Parameter {n}">INCREMENT_PER_SPECIAL_TORCH</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                                 <comment>No aditional condition is needed for timed torches since it&apos;s handled in /TimedTorches.</comment>
                             </sub-events>
                         </event-block>
@@ -562,6 +675,23 @@
                                             <param id="0" name="Scale">1.5</param>
                                         </action>
                                         <action id="9" name="Set scale" sid="342893210609148" type="spr_fire">
+                                            <param id="0" name="Scale">1.5</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="588455962599618">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="769891970198390" type="spr_torch">
+                                            <param id="0" name="Instance variable">type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;upgrade&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="9" name="Set scale" sid="216111263032731" type="spr_torch_light">
+                                            <param id="0" name="Scale">0.5</param>
+                                        </action>
+                                        <action id="9" name="Set scale" sid="577535290922205" type="spr_fire">
                                             <param id="0" name="Scale">1.5</param>
                                         </action>
                                     </actions>

@@ -200,7 +200,7 @@
             <object-type name="spr_torch" sid="603674886976979">
                 <plugin id="Sprite" />
                 <instance-variables>
-                    <instance-variable comment='&quot;normal&quot;, &quot;timed&quot;, &quot;long_distance&quot;' name="type" sid="710368218694502" type="string" />
+                    <instance-variable comment='&quot;normal&quot;, &quot;timed&quot;, &quot;long_distance&quot;, &quot;upgrade&quot;' name="type" sid="710368218694502" type="string" />
                     <instance-variable name="is_lit" sid="801355046223489" type="boolean" />
                     <instance-variable name="half_lit" sid="665306874496308" type="boolean" />
                     <instance-variable name="timed_manager_uid" sid="740478820180350" type="number" />
@@ -263,6 +263,20 @@
                             </collision-poly>
                         </frame>
                     </animation>
+                    <animation framecount="1" loop="0" name="upgrade" pingpong="0" repeatcount="1" repeatto="0" sid="963932717088800" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\gamedev\Desktop\ALITD\art\roguelike-pack\upgrade_torch.png">
+                            <collision-poly>
+                                <point x="0.181818" y="0.153846" />
+                                <point x="0.5" y="0.0769231" />
+                                <point x="0.818182" y="0.153846" />
+                                <point x="0.909091" y="0.5" />
+                                <point x="0.863636" y="0.884615" />
+                                <point x="0.5" y="0.923077" />
+                                <point x="0.136364" y="0.884615" />
+                                <point x="0.0909091" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
                 </animation-folder>
             </object-type>
             <object-type name="spr_fire" sid="406949911175075">
@@ -277,6 +291,11 @@
                         <frame duration="1" hotspotX="0.53125" hotspotY="0.96875" />
                         <frame duration="1" hotspotX="0.53125" hotspotY="0.96875" />
                         <frame duration="1" hotspotX="0.53125" hotspotY="0.96875" />
+                    </animation>
+                    <animation framecount="3" loop="1" name="upgrade" pingpong="0" repeatcount="1" repeatto="0" sid="682752063114095" speed="7">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -630,6 +649,8 @@
         <file name="sfx_new_item.ogg" />
         <file name="sfx_activation.m4a" />
         <file name="sfx_activation.ogg" />
+        <file name="sfx_upgrade.m4a" />
+        <file name="sfx_upgrade.ogg" />
     </sounds-folder>
     <music-folder>
         <file name="msc_bxd.m4a" />

@@ -205,6 +205,7 @@
                     <instance-variable name="half_lit" sid="665306874496308" type="boolean" />
                     <instance-variable name="timed_manager_uid" sid="740478820180350" type="number" />
                     <instance-variable name="long_distance_uid" sid="726686747767041" type="number" />
+                    <instance-variable comment="Whether a timed torch has played it&apos;s ticking noise." name="has_ticked" sid="252662232254224" type="boolean" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="Flash" sid="888281919894813">
@@ -597,6 +598,16 @@
             </sound-folder>
         </sound-folder>
         <sound-folder name="torch">
+            <sound-folder name="timed">
+                <file name="sfx_torch_tick_01.m4a" />
+                <file name="sfx_torch_tick_01.ogg" />
+                <file name="sfx_torch_tick_02.m4a" />
+                <file name="sfx_torch_tick_02.ogg" />
+                <file name="sfx_torch_tick_03.m4a" />
+                <file name="sfx_torch_tick_03.ogg" />
+                <file name="sfx_torch_timed_off.m4a" />
+                <file name="sfx_torch_timed_off.ogg" />
+            </sound-folder>
             <file name="sfx_fire_lit.m4a" />
             <file name="sfx_fire_lit.ogg" />
         </sound-folder>

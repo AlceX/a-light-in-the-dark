@@ -157,6 +157,7 @@
                         <half_lit>false</half_lit>
                         <timed_manager_uid>0</timed_manager_uid>
                         <long_distance_uid>0</long_distance_uid>
+                        <has_ticked>false</has_ticked>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -212,6 +213,7 @@
                         <half_lit>false</half_lit>
                         <timed_manager_uid>39</timed_manager_uid>
                         <long_distance_uid>0</long_distance_uid>
+                        <has_ticked>false</has_ticked>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -245,6 +247,7 @@
                         <half_lit>false</half_lit>
                         <timed_manager_uid>39</timed_manager_uid>
                         <long_distance_uid>0</long_distance_uid>
+                        <has_ticked>false</has_ticked>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -382,6 +385,7 @@
                         <half_lit>false</half_lit>
                         <timed_manager_uid>0</timed_manager_uid>
                         <long_distance_uid>0</long_distance_uid>
+                        <has_ticked>false</has_ticked>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -415,6 +419,7 @@
                         <half_lit>false</half_lit>
                         <timed_manager_uid>0</timed_manager_uid>
                         <long_distance_uid>0</long_distance_uid>
+                        <has_ticked>false</has_ticked>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />

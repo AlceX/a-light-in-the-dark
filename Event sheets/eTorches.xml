@@ -600,6 +600,60 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>Only timed torches flash.</comment>
+                <event-block sid="896001826639798">
+                    <conditions>
+                        <condition behavior="Flash" id="0" name="Is flashing" sid="204442182021333" type="spr_torch" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="813842897681288">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="699090774661022" type="System">
+                                    <param id="0" name="Object">spr_torch</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="512794407547141">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="449993686877720" type="spr_torch">
+                                            <param id="0" name="Instance variable">has_ticked</param>
+                                        </condition>
+                                        <condition id="-9" name="Is visible" sid="307108859710082" type="spr_torch" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Play (by name)" sid="189049473577979" type="Audio">
+                                            <param id="0" name="Folder">0</param>
+                                            <param id="1" name="Audio file name">&quot;sfx_torch_tick_0&quot; &amp; str(round(random(1, 3)))</param>
+                                            <param id="3" name="Loop">0</param>
+                                            <param id="4" name="Volume">-10</param>
+                                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="859274452954011" type="spr_torch">
+                                            <param id="0" name="Instance variable">has_ticked</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="236485030713798">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="291438102044369" type="spr_torch">
+                                            <param id="0" name="Instance variable">has_ticked</param>
+                                        </condition>
+                                        <condition id="-9" inverted="1" name="Is visible" sid="261225515843658" type="spr_torch" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="570569099894319" type="spr_torch">
+                                            <param id="0" name="Instance variable">has_ticked</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block sid="834355077693841">
                     <conditions>
                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="276578279661149" type="obj_timed_torch_handler">
@@ -720,6 +774,12 @@
                                             <param id="0" name="Instance variable">has_started_timer</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
+                                        <action id="0" name="Play" sid="351072046085537" type="Audio">
+                                            <param id="0" name="Audio file">sfx_torch_timed_off</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
                                     </actions>
                                     <sub-events>
                                         <event-block sid="259281883354634">
@@ -785,6 +845,12 @@
                                 <action id="-13" name="Set boolean" sid="308898453629869" type="obj_timed_torch_handler">
                                     <param id="0" name="Instance variable">has_started_timer</param>
                                     <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Play" sid="264251924721133" type="Audio">
+                                    <param id="0" name="Audio file">sfx_torch_timed_off</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
                             <sub-events>

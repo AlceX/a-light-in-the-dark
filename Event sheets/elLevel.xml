@@ -154,5 +154,91 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <event-block sid="173422835820522">
+            <conditions>
+                <condition id="-14" name="Pick by unique ID" sid="340776894458716" type="gui_control_prompts">
+                    <param id="0" name="Unique ID">224</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="634573598061373">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="904561664896905" type="obj_player">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Y co-ordinate">4444</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="668914630456687" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Fade" id="4" name="Set fade-out time" sid="165855177955440" type="gui_control_prompts">
+                            <param id="0" name="Fade-out time">1</param>
+                        </action>
+                        <action behavior="Fade" id="2" name="Set fade-in time" sid="302377767293878" type="gui_control_prompts">
+                            <param id="0" name="Fade-in time">0</param>
+                        </action>
+                        <action behavior="Fade" id="0" name="Restart fade" sid="789507361285040" type="gui_control_prompts" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="151625522032867">
+            <conditions>
+                <condition id="-14" name="Pick by unique ID" sid="484165682943641" type="gui_control_prompts">
+                    <param id="0" name="Unique ID">225</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="724579957490335">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="816610765247419" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="917109437147912" type="gui_control_prompts">
+                            <param id="0" name="Opacity">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="657625245188765">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="929321535150509" type="obj_player">
+                            <param id="0" name="Instance variable">has_boomerang</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="580961561200969" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Fade" id="1" name="Start fade" sid="943974034200932" type="gui_control_prompts" />
+                    </actions>
+                </event-block>
+                <event-block sid="766410975569617">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="220539689161144" type="spr_torch">
+                            <param id="0" name="Unique ID">65</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="544239626685306">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="278085980255581" type="spr_torch">
+                                    <param id="0" name="Instance variable">is_lit</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="582971747988719" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Fade" id="4" name="Set fade-out time" sid="459903240445832" type="gui_control_prompts">
+                                    <param id="0" name="Fade-out time">1</param>
+                                </action>
+                                <action behavior="Fade" id="2" name="Set fade-in time" sid="807559006938562" type="gui_control_prompts">
+                                    <param id="0" name="Fade-in time">0</param>
+                                </action>
+                                <action behavior="Fade" id="0" name="Restart fade" sid="975612146405420" type="gui_control_prompts" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
     </events>
 </c2eventsheet>

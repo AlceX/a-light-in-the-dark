@@ -540,6 +540,40 @@
                 </animation-folder>
             </object-type>
         </object-folder>
+        <object-type name="gui_control_prompts" sid="947112790713743">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="790633320775146">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="arrows" pingpong="0" repeatcount="1" repeatto="0" sid="382616980360702" speed="5">
+                    <frame duration="1" hotspotX="0.500855" hotspotY="0.503067" original-source="C:\Users\gamedev\Desktop\ALITD\art\controles.png">
+                        <collision-poly>
+                            <point x="0.160684" y="0.546012" />
+                            <point x="0.494017" y="0.202454" />
+                            <point x="0.825641" y="0.552147" />
+                            <point x="0.986325" y="0.993865" />
+                            <point x="0.494017" y="0.374233" />
+                            <point x="0.0119658" y="0.957055" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="space" pingpong="0" repeatcount="1" repeatto="0" sid="529232688536306" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\gamedev\Desktop\ALITD\art\controls\Keyboard_White_Space.png">
+                        <collision-poly>
+                            <point x="0.255102" y="0.02" />
+                            <point x="0.744898" y="0.02" />
+                            <point x="0.979592" y="0.5" />
+                            <point x="0.744898" y="0.98" />
+                            <point x="0.255102" y="0.98" />
+                            <point x="0.0204082" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Activeable" plugin-id="Sprite" sid="930276602837141">

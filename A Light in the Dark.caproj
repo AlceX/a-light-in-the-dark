@@ -619,6 +619,10 @@
             <file name="sfx_turret_shoot_02.m4a" />
             <file name="sfx_turret_shoot_02.ogg" />
         </sound-folder>
+        <file name="sfx_new_item.m4a" />
+        <file name="sfx_new_item.ogg" />
+        <file name="sfx_activation.m4a" />
+        <file name="sfx_activation.ogg" />
     </sounds-folder>
     <music-folder>
         <file name="msc_bxd.m4a" />

@@ -65,6 +65,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="882095598133597" type="Audio">
+                                    <param id="0" name="Audio file">sfx_activation</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="-13" name="Set boolean" sid="778739770987764" type="Activeable">
                                     <param id="0" name="Instance variable">Is_Enabled</param>
                                     <param id="1" name="Value">1</param>

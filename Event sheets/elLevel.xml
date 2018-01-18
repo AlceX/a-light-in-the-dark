@@ -110,5 +110,43 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <event-block sid="198259732428723">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="501171408466534" type="Keyboard">
+                    <param id="0" name="Key">77</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="699867161239650">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="239344476639777" type="System">
+                            <param id="0" name="First value">Audio.MasterVolume</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="10" name="Set master volume" sid="127301814516047" type="Audio">
+                            <param id="0" name="dB">-100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="428733315190613">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="946372535732934" type="System">
+                            <param id="0" name="First value">Audio.MasterVolume</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">-100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="10" name="Set master volume" sid="873562524073180" type="Audio">
+                            <param id="0" name="dB">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
     </events>
 </c2eventsheet>

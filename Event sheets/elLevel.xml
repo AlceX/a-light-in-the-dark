@@ -13,9 +13,8 @@
                 <condition id="-2" name="On start of layout" sid="365751922313077" type="System" />
             </conditions>
             <actions>
-                <action id="-4" name="Set position to another object" sid="537694194438327" type="spr_player_light">
-                    <param id="0" name="Object">pickup_items</param>
-                    <param id="1" name="Image point (optional)">0</param>
+                <action id="1" name="Append text" sid="136453975958521" type="txt_end">
+                    <param id="0" name="Text">newline &amp; newline &amp; &quot;¡Felicitaciones, has terminado el demo! Si tienes alguna sugerencia, deja un comentario por favor.&quot;</param>
                 </action>
                 <action id="0" name="Play" sid="516814172963833" type="Audio">
                     <param id="0" name="Audio file">msc_bxd</param>
@@ -24,6 +23,21 @@
                     <param id="1" name="Tag (optional)">&quot;music&quot;</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="728945835986897">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="872349554812231" type="pickup_items">
+                            <param id="0" name="Animation">&quot;torch&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="805639913999014" type="spr_player_light">
+                            <param id="0" name="Object">pickup_items</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="812518629565836">
             <conditions>

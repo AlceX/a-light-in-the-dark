@@ -471,9 +471,14 @@
             </conditions>
             <actions />
             <sub-events>
-                <event-block sid="258100363318588">
+                <event-block any="1" sid="258100363318588">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="888854873451871" type="obj_player">
+                            <param id="0" name="Instance variable">state</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;no_light&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="963212691220452" type="obj_player">
                             <param id="0" name="Instance variable">state</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">&quot;light&quot;</param>

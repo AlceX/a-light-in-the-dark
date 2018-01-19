@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>elSplash</name>
+    <events>
+        <event-block sid="895155219943281">
+            <conditions>
+                <condition id="1" name="On any key pressed" sid="764860789875868" type="Keyboard" />
+            </conditions>
+            <actions>
+                <action behavior="Fade" id="2" name="Set fade-in time" sid="611782598468982" type="splash">
+                    <param id="0" name="Fade-in time">0.5</param>
+                </action>
+                <action behavior="Fade" id="3" name="Set wait time" sid="502609526698048" type="splash">
+                    <param id="0" name="Wait time">0.1</param>
+                </action>
+                <action behavior="Fade" id="4" name="Set fade-out time" sid="695477692986089" type="splash">
+                    <param id="0" name="Fade-out time">0.5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="656746403115217">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="611714111892507" type="splash" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="870216456608551" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

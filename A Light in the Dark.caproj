@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2project>
     <name>A Light in the Dark</name>
-    <description></description>
+    <description>A top down exploration game in a world of eternal night.</description>
     <version>1.0.0.0</version>
-    <author></author>
-    <author-email></author-email>
-    <author-website>http://</author-website>
-    <app-id>com.mycompany.myapp</app-id>
+    <author>Alce</author>
+    <author-email>thealcex@gmail.com</author-email>
+    <author-website>http://www.alcex.wordpress.com</author-website>
+    <app-id>com.wordpress.alcex.alightinthedark</app-id>
     <unique-id>17akzzf9cb4qm</unique-id>
     <saved-with-version>25000</saved-with-version>
     <used-plugins>
@@ -36,6 +36,7 @@
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
+    <first-layout>Splash</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
@@ -43,7 +44,7 @@
         <prop name="Enable WebGL">On</prop>
         <prop name="Fullscreen in browser">Letterbox scale</prop>
         <prop name="Fullscreen scaling">High quality</prop>
-        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
         <prop name="Orientations">Any</prop>
         <prop name="Pause on unfocus">No</prop>
         <prop name="Physics engine">Box2D asm.js</prop>
@@ -578,6 +579,19 @@
         <object-type name="txt_end" sid="701423780083260">
             <plugin id="Text" />
         </object-type>
+        <object-type name="splash" sid="710416539020193">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="711077633244897">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="895772278866862" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\gamedev\Pictures\splash.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Activeable" plugin-id="Sprite" sid="930276602837141">
@@ -601,10 +615,14 @@
     <layout-folder>
         <layout>test.xml</layout>
         <layout>Level.xml</layout>
+        <layout>Splash.xml</layout>
+        <layout>Menu.xml</layout>
     </layout-folder>
     <event-folder>
         <event-folder name="Layouts">
             <event-sheet>elLevel.xml</event-sheet>
+            <event-sheet>elSplash.xml</event-sheet>
+            <event-sheet>elMenu.xml</event-sheet>
         </event-folder>
         <event-sheet>ePlayer.xml</event-sheet>
         <event-sheet>eCamera.xml</event-sheet>

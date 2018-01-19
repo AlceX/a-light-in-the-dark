@@ -11,8 +11,10 @@
     <saved-with-version>25000</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
@@ -23,10 +25,13 @@
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="Rotate" version="1">Rotate</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
-    <used-effects />
+    <used-effects>
+        <effect author="Scirra" id="brightness">Brightness</effect>
+    </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
@@ -344,6 +349,12 @@
             <object-type name="Audio" sid="614651411169380">
                 <plugin id="Audio" />
             </object-type>
+            <object-type name="Mouse" sid="137104951800955">
+                <plugin id="Mouse" />
+            </object-type>
+            <object-type name="Browser" sid="716012299102908">
+                <plugin id="Browser" />
+            </object-type>
         </object-folder>
         <object-folder name="Map">
             <object-type name="pickup_items" sid="565485772441531">
@@ -592,6 +603,58 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="gui_menu" sid="311863043589233">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="is_button" sid="460963760635565" type="boolean" />
+                <instance-variable name="link" sid="460842214533892" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Fade" sid="198383070231696">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="267987219048997">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="117785131295557" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\gamedev\Desktop\ALITD\art\title.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.1125" />
+                            <point x="0.895312" y="0.139583" />
+                            <point x="0.5" y="0.191667" />
+                            <point x="0.60625" y="0.191667" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="anykey" pingpong="0" repeatcount="1" repeatto="0" sid="314656816481833" speed="5">
+                    <frame duration="1" hotspotX="0.502058" hotspotY="0.517241" original-source="C:\Users\gamedev\Desktop\ALITD\art\title_anykey.png">
+                        <collision-poly>
+                            <point x="0.00823045" y="0.586207" />
+                            <point x="0.979424" y="0.206897" />
+                            <point x="0.983539" y="0.551724" />
+                            <point x="0.938272" y="0.586207" />
+                            <point x="0.00823045" y="0.551724" />
+                            <point x="0.00823045" y="0.551724" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="twitter" pingpong="0" repeatcount="1" repeatto="0" sid="864330278660712" speed="5">
+                    <frame duration="1" hotspotX="0.502128" hotspotY="0.521739" original-source="C:\Users\gamedev\Desktop\ALITD\art\title_twitter.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="1" y="0" />
+                            <point x="0" y="0" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="newsletter" pingpong="0" repeatcount="1" repeatto="0" sid="754152682263799" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.517241" original-source="C:\Users\gamedev\Desktop\ALITD\art\title_newsletter.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Activeable" plugin-id="Sprite" sid="930276602837141">
@@ -647,6 +710,8 @@
                 <roll-off-factor>1</roll-off-factor>
             </properties>
         </global-instance>
+        <global-instance type="Mouse" uid="242" />
+        <global-instance type="Browser" uid="243" />
     </global-instances>
     <sounds-folder>
         <sound-folder name="boomerang">
@@ -711,6 +776,8 @@
     <music-folder>
         <file name="msc_bxd.m4a" />
         <file name="msc_bxd.ogg" />
+        <file name="msc_sxmphxny.m4a" />
+        <file name="msc_sxmphxny.ogg" />
     </music-folder>
     <files-folder>
         <file-folder name="Icons">

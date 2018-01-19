@@ -3,19 +3,29 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>elSplash</name>
     <events>
+        <event-block sid="755145473609282">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="321161170841072" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Preload" sid="318618424485802" type="Audio">
+                    <param id="0" name="Audio file">msc_sxmphxny</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="895155219943281">
             <conditions>
                 <condition id="1" name="On any key pressed" sid="764860789875868" type="Keyboard" />
             </conditions>
             <actions>
                 <action behavior="Fade" id="2" name="Set fade-in time" sid="611782598468982" type="splash">
-                    <param id="0" name="Fade-in time">0.5</param>
+                    <param id="0" name="Fade-in time">0.2</param>
                 </action>
                 <action behavior="Fade" id="3" name="Set wait time" sid="502609526698048" type="splash">
                     <param id="0" name="Wait time">0.1</param>
                 </action>
                 <action behavior="Fade" id="4" name="Set fade-out time" sid="695477692986089" type="splash">
-                    <param id="0" name="Fade-out time">0.5</param>
+                    <param id="0" name="Fade-out time">0.2</param>
                 </action>
             </actions>
         </event-block>

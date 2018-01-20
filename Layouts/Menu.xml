@@ -414,7 +414,7 @@
                     </properties>
                     <instance-variables>
                         <is_button>true</is_button>
-                        <link></link>
+                        <link>http://eepurl.com/dh3j-P</link>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Fade">
@@ -446,7 +446,7 @@
                         <x>143</x>
                         <y>462</y>
                         <z>0</z>
-                        <width>272</width>
+                        <width>270</width>
                         <height>29</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
